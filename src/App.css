@@ -1,38 +1,150 @@
-.App {
-  text-align: center;
+.bg-utama{
+  background: #ffad00;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar-fixed-bottom, .navbar-fixed-top {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  box-shadow: 5px 9px 8px 5px rgb(0 0 0 / 20%);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.content-page-after-header {
+  padding-top: 154px;
+}
+.text-utama{
+  color: #ffad00;
+}
+button.btn.btn-utama {
+  color: #3a2d2d;
+  background: #ffad00;
+  font-weight:bold;
+}
+.logo-image{
+  width: 150px;
+}
+.img-fluid-carousell {
+  max-width: 100%;
+  height: 700px;
+}
+img.img-fitur {
+  width: 100px;
+  height: auto;
+}
+.border-left {
+  border-left: 1px solid #dcd2d2 !important;
+}
+.border-right {
+  border-right: 1px solid #dcd2d2 !important;
+}
+.border-fitur {
+  border: none;
+}
+.border-bottom-fitur{
+  border-bottom: 1px solid #dee2e6!important;
+  box-shadow: 2px 1px 10px 4px rgb(0 0 0 / 18%);
+}
+.about-img{
+  width: 400px;
+}
+span.pr-5 {
+  padding-right: 10px;
+}
+span.font-weight-bold {
+  font-weight: bold;
+}
+.contact-img{
+  width: 350px;
+}
+.w-about-text {
+  text-align: justify;
+  font-weight: 400;
+  font-size: 18px;
+}
+.content-about {
+  display: block;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .w-about-text {
+    margin-left: 45%;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .w-about-text {
+    margin-left: 25%;
+  }
+}
+@media only screen and (min-width: 1201px) and (max-width: 1400px) {
+  .w-about-text {
+    margin-left: 10%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .border-left {
+    border: none
+  }
+  .border-right {
+    border-right: none;
+  }
+  .border-fitur {
+    border: 1px solid #dee2e6!important;
+  }
+  .content-about {
+    margin-left: 13px;
+    margin-right: 13px;
+  } 
+  
+}
+@media only screen and (max-width: 1200px) {
+  .img-fluid-carousell {
+    height: auto;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .content-page-after-header {
+    padding-top: 125px;
+  }
+  .logo-image{
+    width: 100px;
+  }
+  img.img-fitur {
+    width: 70px;
+    height: auto;
+  }
+  .about-img{
+    width: 370px;
+  }
+}
+.img-card-size{
+  max-width: 100%;
+  max-height: 100%;
+}
+.image-card-pelayanan {
+  height: 150px;
+  margin-bottom: 15px;
+}
+.image-card-service {
+  height: 250px;
+}
+.image-card-testimoni{
+  height: 300px;
+}
+.bg-layanan{
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../public/asset/bg-layanan.jpeg');
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+button.btn.btn-whatsapp {
+  background: #47c859;
+  color: black;
+  font-weight: 500;
+}
+button.btn.btn-telfon {
+  background: #1be1df;
+  color: black;
+  font-weight: 500;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bg-image-contact {
+  border-radius: 10px;
 }

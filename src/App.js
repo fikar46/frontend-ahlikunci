@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import HeaderPage from './component/Header';
+import CarousellPage from './component/CarousellPage';
+import FiturLayanan from './component/FiturLayanan';
+import AboutPage from './component/AboutPage';
+import PelayananPage from './component/PelayananPage';
+import ServicePage from './component/ServicePage';
+import TestimoniPage from './component/TestimoniPage';
+import ContactPage from './component/ContactPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <HeaderPage/>
+      <div className="content-page-after-header">
+      <CarousellPage/>
+      <FiturLayanan/>
+      <AboutPage/>
+      <PelayananPage/>
+      <ServicePage/>
+      <TestimoniPage/>
+      <ContactPage/>
+      </div>
     </div>
   );
 }
