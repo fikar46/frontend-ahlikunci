@@ -37,13 +37,13 @@ const HeaderPage = (props) => {
               <NavLink className="text-white" href="/">Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="text-white" href="/components/">Tentang Kami</NavLink>
+              <NavLink className="text-white" href="/tentang-kami">Tentang Kami</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="text-white" href="/components/">Layanan</NavLink>
+              <NavLink className="text-white" href="/layanan">Layanan</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="text-white" href="/components/">Kontak</NavLink>
+              <NavLink className="text-white" href="/kontak">Kontak</NavLink>
             </NavItem>
           </Nav>
         
