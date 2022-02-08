@@ -23,14 +23,14 @@ const DashboardPageAdmin = (props) => {
                 <div className="card p-3">
                     <h3 className="card-head">Testimoni</h3>
                     <p className="mt-3">Tambah dan ubah Testimoni dari pelanggan</p>
-                    <button className="btn btn-success">Buka</button>
+                    <a className="btn btn-success" href="/testimoni-management">Buka</a>
                 </div>
             </div>
             <div className="col-12 col-md-3 mb-3">
                 <div className="card p-3">
                     <h3 className="card-head">Layanan</h3>
                     <p className="mt-3">Tambah dan ubah pelayanan yang sudah ditangani </p>
-                    <button className="btn btn-success">Buka</button>
+                    <a href="/layanan-management" className="btn btn-success">Buka</a>
                 </div>
             </div>
             <div className="col-12 col-md-3 mb-3">
@@ -65,7 +65,7 @@ const DashboardPageAdmin = (props) => {
                 <div className="card p-3">
                     <h3 className="card-head">User Management</h3>
                     <p className="mt-3">Tambah user untuk memanage website ini</p>
-                    <button className="btn btn-success">Buka</button>
+                    <a href="/user-management" className="btn btn-success">Buka</a>
                 </div>
             </div>
             <div className="col-12 col-md-3 mb-3">
