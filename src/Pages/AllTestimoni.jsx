@@ -1,25 +1,31 @@
+
 import React, { useState, useEffect } from 'react';
+import HeaderPage from '../component/Header';
 import axios from 'axios';
 import { koneksi } from '../environtment';
-
-const TestimoniPage = (props) => {
+import MapPaginationComponent from '../admin/helper/paginationComponent';
+import FooterPage from '../component/Footer';
+const AllTestimoniPages = (props) => {
     const [testi,setTesti] = useState([]);
+    const [page, setPage ] =useState(0)
+    const [pagination, setPagination ] =useState(0)
     useEffect(()=>{
         getAllTesti()
     },[])
     const getAllTesti=()=>{
         axios.post(`${koneksi}/kunci/getalltestimoni`,{
-            page:0
+            page:page*10
         }).then((res)=>{
             var data = res.data.result.filter((item)=> {
                 return item.status_blog != "reject"
             })
             setTesti(data)
+            setPagination(res.data.pagination)
         })
     }
     const mapTesti=()=>{
        
-        var data = testi.slice(0,3).map((item)=>{
+        var data = testi.map((item)=>{
             return(
                 <div className="col-12 col-md-4 mb-4">
                     <div className="card p-3">
@@ -36,18 +42,21 @@ const TestimoniPage = (props) => {
         return data
     }
   return (
-  <div className="bg-layanan">
-       <div className="container mt-5 p-3">
-            <h1 className="text-center text-white py-5">Testimoni pelanggan kami</h1>
-            <div className="row">
-                {mapTesti()}
+    <div>
+        <HeaderPage/>
+        <div className="content-page-after-header">
+            <div className="container mt-5">
+                <h1 className="mt-3 text-center">Semua testimoni</h1>
+                <p className="mb-5 text-center">Berikut dibawah ini merupakan testimoni dari pelanggan - pelanggan kami</p>
+                <div className="row">
+                    {mapTesti()}
+                </div>
+                {MapPaginationComponent(pagination,page,setPage,getAllTesti)}
             </div>
-            <div className="text-center text-white mb-4">
-               <a href="/all-testimoni"><button className="btn btn-utama btn-lg"> Lihat testimoni lainnya</button></a>
-            </div>
+            <FooterPage kontak={props.kontak}/>
         </div>
-  </div>
+    </div>
   );
 }
 
-export default TestimoniPage;
+export default AllTestimoniPages;

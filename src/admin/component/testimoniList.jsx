@@ -50,9 +50,9 @@ function TesimoniListPageAdmin(){
     const roleTable=()=>{
         return(
             <div className="mt-4">
-                <p>Create artikel</p>
+                <p>Create testimoni</p>
                 <a href="/buat-testimoni" className="btn btn-success mb-4">Buat Testimoni</a>
-                <h4>Your article</h4>
+                <h4>Testimoni</h4>
                 <table className="table">
                     <thead>
                         <tr>

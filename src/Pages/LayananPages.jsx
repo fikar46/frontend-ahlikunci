@@ -5,6 +5,7 @@ import FiturLayanan from '../component/FiturLayanan';
 import PelayananPage from '../component/PelayananPage';
 import ServicePage from '../component/ServicePage';
 import ContactPage from '../component/ContactPage';
+import FooterPage from '../component/Footer';
 const LayananPages = (props) => {
 
   return (
@@ -15,7 +16,8 @@ const LayananPages = (props) => {
         <FiturLayanan/>
         <PelayananPage/>
         <ServicePage/>
-        <ContactPage/>
+        <ContactPage kontak={props.kontak}/>
+        <FooterPage kontak={props.kontak}/>
         </div>
     </div>
   );

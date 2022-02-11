@@ -18,14 +18,32 @@ import UpdateTestimoniPagesAdmin from './admin/Pages/updateTestimoniPageAdmin';
 import LayananPageAdmin from './admin/Pages/LayananPages';
 import LayananCreatePageAdmin from './admin/Pages/LayananPageCreateAdmin';
 import LayananUpdatePageAdmin from './admin/Pages/LayananPageUpdateAdmin';
+import CarousellPageAdmin from './admin/Pages/carousellPageAdmin';
+import ContactPageAdmin from './admin/Pages/ContactPageAdmin';
+import MetaManagementAdmin from './admin/Pages/MetaManagement';
+import TestimoniPages from './Pages/TestimoniPages';
+import AllTestimoniPages from './Pages/AllTestimoni';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { koneksi } from './environtment';
 function App() {
+  const [kontak,setKontak] = useState({})
+  useEffect(()=>{
+    getDataKontak()
+  },[])
+  const getDataKontak=()=>{
+    axios.post(`${koneksi}/kunci/getcontact`).then((res)=>{
+
+      setKontak(res.data[0])
+    })
+  }
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<HomesPage />}/>
-      <Route path="/tentang-kami" element={<TentangPages />}/>
-      <Route path="/layanan" element={<LayananPages />}/>
-      <Route path="/kontak" element={<KontakPages />}/>
+      <Route path="/" element={<HomesPage kontak={kontak}/>}/>
+      <Route path="/tentang-kami" element={<TentangPages kontak={kontak}/>}/>
+      <Route path="/layanan" element={<LayananPages kontak={kontak}/>}/>
+      <Route path="/kontak" element={<KontakPages kontak={kontak}/>}/>
       <Route path="/adminkeys" element={<HomePageAdmin />}/>
       <Route path="/login-admin" element={<LoginPageAdmin />}/>
       <Route path="/user-management" element={<UserManagementPage />}/>
@@ -35,6 +53,12 @@ function App() {
       <Route path="/layanan-management" element={<LayananPageAdmin/>}/>
       <Route path="/tambah-layanan" element={<LayananCreatePageAdmin/>}/>
       <Route path="/update-layanan/:id" element={<LayananUpdatePageAdmin/>}/>
+
+      <Route path="/carousell-management" element={<CarousellPageAdmin/>}/>
+      <Route path="/kontak-management" element={<ContactPageAdmin/>}/>
+      <Route path="/meta-management" element={<MetaManagementAdmin/>}/>
+      <Route path="/testimoni/:id" element={<TestimoniPages kontak={kontak}/>}/>
+      <Route path="/all-testimoni" element={<AllTestimoniPages kontak={kontak}/>}/>
     </Routes>
   </BrowserRouter>
    

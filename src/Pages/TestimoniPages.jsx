@@ -1,20 +1,19 @@
 
 import React, {  } from 'react';
 import HeaderPage from '../component/Header';
-import ContactPage from '../component/ContactPage';
+import TestimoniPageDetail from '../component/TestimoniDetail';
 import FooterPage from '../component/Footer';
-const KontakPages = (props) => {
+const TestimoniPages = (props) => {
 
   return (
     <div>
         <HeaderPage/>
         <div className="content-page-after-header">
-       
-        <ContactPage kontak={props.kontak}/>
-        <FooterPage kontak={props.kontak}/>
+             <TestimoniPageDetail/>
+             <FooterPage kontak={props.kontak}/>
         </div>
     </div>
   );
 }
 
-export default KontakPages;
+export default TestimoniPages;

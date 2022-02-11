@@ -160,3 +160,86 @@ button.btn.btn-telfon {
 .bg-image-contact {
   border-radius: 10px;
 }
+p.caption-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.blog-post {
+  margin-bottom: 4rem;
+}
+.blog-post-title {
+  margin-bottom: .25rem;
+  font-size: 2.5rem;
+}
+.blog-post-meta {
+  margin-bottom: 1.25rem;
+  color: #727272;
+}
+span.pr-5.icon-sosmed {
+  font-size: 30px;
+  color: #ffad00;
+  margin-right: 7px;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #ffae00;
+  color: #212529;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 28px;
+  width: 53px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+#myBtn-whatsapp {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  z-index: 99;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #47c859;
+  color: white;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 28px;
+  width: 53px;
+}
+
+#myBtn-whatsapp:hover {
+  background-color: #555;
+}
+#myBtn-phone {
+  position: fixed;
+  bottom: 160px;
+  right: 30px;
+  z-index: 99;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #1be1de;
+  color: white;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 28px;
+  width: 53px;
+}
+
+#myBtn-phone:hover {
+  background-color: #555;
+}

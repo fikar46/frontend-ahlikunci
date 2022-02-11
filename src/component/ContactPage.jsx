@@ -1,7 +1,7 @@
 import React, {  } from 'react';
 
 const ContactPage = (props) => {
-
+    const kontak = props.kontak;
   return (
     <div className="bg-contact">
     <div className="container py-5">
@@ -16,16 +16,12 @@ const ContactPage = (props) => {
                 <div className="content-about w-about-text">
                     <h1 className="text-utama">Kontak Kami</h1>
                     <p className="text-dark">Segera hubungi kami untuk informasi selengkapnya mengenai jasa ahli kunci mobil, anda bisa datang ke workshop kami atau kami langsung meluncur ke lokasi anda!</p>
-                    <button className="btn btn-whatsapp mb-3"><i className='fab fa-whatsapp'></i> Klik disini untuk Whatsapp kami</button><br/>
-                    <button className="btn btn-telfon"><i className='fas fa-phone-alt'></i> 082210996848</button>
+                    <a href={`https://api.whatsapp.com/send?phone=${kontak.whatsapp}`}><button className="btn btn-whatsapp mb-3"><i className='fab fa-whatsapp'></i> Klik disini untuk Whatsapp kami</button></a><br/>
+                    <a href={`tel:${kontak.telphone}`}><button className="btn btn-telfon"><i className='fas fa-phone-alt'></i> {kontak.telphone}</button></a>
                     <div className="mt-3">
                     <hr/>
                         <h3>Lokasi workshop</h3>
-                        <p>WORKSHOP TANGERANG<br/>
-                        Pelangi Swalayan Pintu Masuk Lantai Dasar<br/>
-                        Jl. Kh. Hasyim Ashari No.62, Buaran Indah,<br/>
-                        Kec. Tangerang, Kota Tangerang<br/>
-                        Banten 15119, Indonesia</p>
+                        <p>{kontak.address}</p>
                         <hr/>
                         <p><span className="font-weight-bold">Jam Operasional</span><br/>
                         Senin – Sabtu (8 am – 9 pm)<br/>

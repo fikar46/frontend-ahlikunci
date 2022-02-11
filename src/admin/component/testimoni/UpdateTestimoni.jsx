@@ -51,6 +51,8 @@ const {
 function UpdateTestimoniAdmin(){
     let { id } = useParams();
     const [thumbnailName, setThumbnailName] = useState("Upload thumbnail blog")
+    const [titleLength,setTitleLength] = useState(0);
+    const [descLength,setDescLength] = useState(0)
     const [testi, setTesti] = useState({})
     const editor = React.createRef();
     const textarea = React.createRef();
@@ -61,6 +63,13 @@ function UpdateTestimoniAdmin(){
    const konten =(e)=>{
     setValue(e.value);
    }
+   const textCounter=(e)=>{
+    if(e.target.id == "judul"){
+         setTitleLength(e.target.value.length)
+    }else{
+        setDescLength(e.target.value.length)
+    }
+ }
    useEffect(()=>{
     getTestimoniByid()
    },[])
@@ -86,7 +95,6 @@ function UpdateTestimoniAdmin(){
          var isEmpty = !Object.values(testiObj).every(x =>{
                 return x !== ''
         });
-            console.log(isEmpty)
             if(!isEmpty){
                 var formData = new FormData()
                 var file = document.getElementById('thumbnail');
@@ -101,7 +109,9 @@ function UpdateTestimoniAdmin(){
                         Axios.post(`${koneksi}/kunci/updatetestimoni`,{
                             id:testi.id,judul:judulBlog,thumbnail:namaThumbnail,caption:captionBlog,kategori:kategoriBlog,konten,id_user,status_blog:"publish",unique:id
                         }).then((res)=>{
-                            Swal.fire('success', 'Testimoni berhasil di update', 'success')
+                            Swal.fire('success', 'Testimoni berhasil di update', 'success').then((res)=>{
+                                window.location.href="/testimoni-management"
+                            })
                         })
                     })
                     .catch((err) =>{
@@ -112,7 +122,10 @@ function UpdateTestimoniAdmin(){
                     Axios.post(`${koneksi}/kunci/updatetestimoni`,{
                         id:testi.id,judul:judulBlog,thumbnail:thumbnailName,caption:captionBlog,kategori:kategoriBlog,konten,id_user,status_blog:"publish",unique:id
                     }).then((res)=>{
-                        Swal.fire('success', 'Testimoni berhasil di update', 'success')
+                        Swal.fire('success', 'Testimoni berhasil di update', 'success').then((res)=>{
+                            window.location.href="/testimoni-management"
+                        })
+                        
                     })
                 }
             }else{
@@ -176,17 +189,20 @@ if(user != undefined){
     return(
        <div className="container mt-5">
        <h1 className="pt-5">Create article</h1>
-            <div className="mb-3 col-8">
+            {/* <div className="mb-3 col-8">
                 <label htmlFor="kategori" className="form-label">Kategori artikel</label>
                 <input type="text" className="form-control" id="kategori" aria-describedby="kategori" placeholder="Masukan kategori" ref={kategori} defaultValue={testi.kategori}/>
-            </div>
+            </div> */}
             <div className="mb-3 col-8">
                 <label htmlFor="judul" className="form-label">Judul</label>
-                <input type="email" className="form-control" id="judul" aria-describedby="judul" placeholder="judul artikel" ref={judul} defaultValue={testi.judul}/>
+                <input type="text" onChange={textCounter} className="form-control" id="judul" aria-describedby="judul" placeholder="judul artikel" ref={judul} defaultValue={testi.judul}/>
+                <div className="d-flex justify-content-end"> {testi.judul != undefined? <div >{titleLength>0 ? <p>{titleLength<=60?<span>{titleLength}</span>:<span className="text-danger">{titleLength}</span>}</p>:<p className="text-right">{testi.judul.length}</p>}</div>:<div></div>}</div>
+            
             </div>
             <div className="mb-3 col-8">
                 <label htmlFor="judul" className="form-label">Caption</label>
-                <textarea type="text" className="form-control" id="caption" aria-describedby="caption" placeholder="Caption artikel" ref={caption} defaultValue={testi.caption}/>
+                <textarea type="text" onChange={textCounter} className="form-control" id="caption" aria-describedby="caption" placeholder="Caption artikel" ref={caption} defaultValue={testi.caption}/>
+                <div className="d-flex justify-content-end"> {testi.caption != undefined? <div >{descLength>0 ? <p>{descLength<=200?<span>{descLength}</span>:<span className="text-danger">{descLength}</span>}</p>:<p className="text-right">{testi.caption.length}</p>}</div>:<div></div>}</div>
             </div>
             <div className="mb-3 col-8">
                 <label htmlFor="judul" className="form-label">Thumbnail</label><br/>

@@ -1,7 +1,9 @@
-import React, {  } from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import axios from 'axios';
+import { koneksi } from '../environtment';
 const ServicePage = (props) => {
   var settings = {
     dots: true,
@@ -38,74 +40,42 @@ const ServicePage = (props) => {
       }
     ]
   };
+  const [layanan,setLayanan] = useState([])
+  useEffect(()=>{
+    getLayanan()
+  },[])
+  const getLayanan=()=>{
+    axios.post(`${koneksi}/kunci/getlayananlandingpage`).then((res)=>{
+      setLayanan(res.data)
+    }).catch((err)=>{
+
+    })
+  }
+  const mapData=()=>{
+    var data = layanan.map((item)=>{
+      return(
+        <div>
+        <a href="#" className="text-dark "  style={{textDecoration:'none'}}>
+          <div className="card p-3">
+                        <div className="image-card-service">
+                            <img src={`https://storage.siapptn.com/image/blog/${item.foto}`} className="card-img-top img-card-size" alt=""></img>
+                        </div>
+                        <p>{item.nama}</p>  
+            </div>
+        </a>
+        </div>
+      )
+    })
+    return data
+  }
   return (
        <div className="container my-5 p-3">
             <h1 className="text-center py-5">Berikut beberapa layanan yang sudah kami tangani</h1>
             <Slider {...settings}>
-          <div>
-            <div className="card p-3">
-                        <div className="image-card-service">
-                            <img src="https://serrurier-laval.ca/wp-content/uploads/2019/08/Car-Keys-Remotes-Replacement-%e2%80%8b.jpg" className="card-img-top img-card-size" alt=""></img>
-                        </div>
-                        <p>Service Kunci Mobil</p>  
-            </div>
-          </div>
-          <div>
-            <div className="card p-3">
-                        <div className="image-card-service">
-                            <img src="https://serrurier-laval.ca/wp-content/uploads/2019/08/Car-Keys-Remotes-Replacement-%e2%80%8b.jpg" className="card-img-top img-card-size" alt=""></img>
-                        </div>
-                        <p>Service Kunci Mobil</p>  
-            </div>
-          </div>
-          <div>
-          <div className="card p-3">
-                        <div className="image-card-service">
-                            <img src="https://serrurier-laval.ca/wp-content/uploads/2019/08/Car-Keys-Remotes-Replacement-%e2%80%8b.jpg" className="card-img-top img-card-size" alt=""></img>
-                        </div>
-                        <p>Service Kunci Mobil</p>  
-            </div>
-          </div>
-          <div>
-          <div className="card p-3">
-                        <div className="image-card-service">
-                            <img src="https://serrurier-laval.ca/wp-content/uploads/2019/08/Car-Keys-Remotes-Replacement-%e2%80%8b.jpg" className="card-img-top img-card-size" alt=""></img>
-                        </div>
-                        <p>Service Kunci Mobil</p>  
-            </div>
-          </div>
-          <div>
-          <div className="card p-3">
-                        <div className="image-card-service">
-                            <img src="https://serrurier-laval.ca/wp-content/uploads/2019/08/Car-Keys-Remotes-Replacement-%e2%80%8b.jpg" className="card-img-top img-card-size" alt=""></img>
-                        </div>
-                        <p>Service Kunci Mobil</p>  
-            </div>
-          </div>
-          <div>
-          <div className="card p-3">
-                        <div className="image-card-service">
-                            <img src="https://serrurier-laval.ca/wp-content/uploads/2019/08/Car-Keys-Remotes-Replacement-%e2%80%8b.jpg" className="card-img-top img-card-size" alt=""></img>
-                        </div>
-                        <p>Service Kunci Mobil</p>  
-            </div>
-          </div>
-          <div>
-          <div className="card p-3">
-                        <div className="image-card-service">
-                            <img src="https://serrurier-laval.ca/wp-content/uploads/2019/08/Car-Keys-Remotes-Replacement-%e2%80%8b.jpg" className="card-img-top img-card-size" alt=""></img>
-                        </div>
-                        <p>Service Kunci Mobil</p>  
-            </div>
-          </div>
-          <div>
-          <div className="card p-3">
-                        <div className="image-card-service">
-                            <img src="https://serrurier-laval.ca/wp-content/uploads/2019/08/Car-Keys-Remotes-Replacement-%e2%80%8b.jpg" className="card-img-top img-card-size" alt=""></img>
-                        </div>
-                        <p>Service Kunci Mobil</p>  
-            </div>
-          </div>
+          
+            {mapData()}
+          
+        
         </Slider>
         </div>
 

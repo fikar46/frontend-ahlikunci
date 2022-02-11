@@ -51,6 +51,8 @@ function CreateTestimoniAdmin(){
     const editor = React.createRef();
     const textarea = React.createRef();
     const judul = React.useRef("");
+    const [titleLength,setTitleLength] = useState(0);
+    const [descLength,setDescLength] = useState(0)
     const kategori = React.useRef("");
     const caption = React.useRef("");
     var user = JSON.parse(localStorage.getItem("data"))
@@ -64,39 +66,50 @@ function CreateTestimoniAdmin(){
         var kategoriBlog = kategori.current.value
         var konten = EditorUtils.getHtml(view.state)
         var id_user = cookies.get("idUser");
-        var testiObj={
-            judulBlog,captionBlog,kategoriBlog,konten,id_user
-        }
-         var isEmpty = !Object.values(testiObj).every(x =>{
-                return x !== ''
-        });
-        if(!isEmpty){
-            var formData = new FormData()
-            var file = document.getElementById('thumbnail');
-           if(file.files[0] != undefined){
-            var blob = file.files[0].slice(0, file.files[0].size, 'image/png');
-            var imageName = 'thumbnail_blog'+'_'+Date.now()+'.png'
-            var newFile = new File([blob], `${imageName}`, {type: 'image/png'});
-            formData.append('files', newFile,newFile.name)
-            var namaThumbnail = newFile.name
-            Axios.post(`https://storage.siapptn.com/uploadblog`,formData)
-            .then((res) => {
-                Axios.post(`${koneksi}/kunci/posttestimoni`,{
-                    judul:judulBlog,thumbnail:namaThumbnail,caption:captionBlog,kategori:kategoriBlog,konten,id_user,status_blog:"publish"
-                }).then((res)=>{
-                    Swal.fire('success', 'Blog berhasil terupload dan akan menuju proses review', 'success')
-                })
-            })
-            .catch((err) =>{
-            Swal.fire('Oops...', 'Maaf thumbnail gagal terupload harap diulang kembali, pastikan terhubung internet dengan baik.', 'error')
-                console.log(err)
-            }) 
-           }else{
-            Swal.fire("oops","Thumbnail testimoni belum ter upload","error")
-           }
+        if(judulBlog.length > 60){
+            alert('Judul tidak boleh lebih dari 60 karakter')
         }else{
-            Swal.fire("oops","Form masih ada yang kosong cek kembali!","error")
-        } 
+            if(captionBlog.length > 200){
+                alert("Caption tidak boleh lebih dari 200 karakter")
+            }else{
+                var testiObj={
+                    judulBlog,captionBlog,kategoriBlog,konten,id_user
+                }
+                 var isEmpty = !Object.values(testiObj).every(x =>{
+                        return x !== ''
+                });
+                if(!isEmpty){
+                    var formData = new FormData()
+                    var file = document.getElementById('thumbnail');
+                   if(file.files[0] != undefined){
+                    var blob = file.files[0].slice(0, file.files[0].size, 'image/png');
+                    var imageName = 'thumbnail_blog'+'_'+Date.now()+'.png'
+                    var newFile = new File([blob], `${imageName}`, {type: 'image/png'});
+                    formData.append('files', newFile,newFile.name)
+                    var namaThumbnail = newFile.name
+                    Axios.post(`https://storage.siapptn.com/uploadblog`,formData)
+                    .then((res) => {
+                        Axios.post(`${koneksi}/kunci/posttestimoni`,{
+                            judul:judulBlog,thumbnail:namaThumbnail,caption:captionBlog,kategori:kategoriBlog,konten,id_user,status_blog:"publish"
+                        }).then((res)=>{
+                            Swal.fire('success', 'Testimoni berhasil di update', 'success').then((res)=>{
+                                window.location.href="/testimoni-management"
+                            })
+                        })
+                    })
+                    .catch((err) =>{
+                    Swal.fire('Oops...', 'Maaf thumbnail gagal terupload harap diulang kembali, pastikan terhubung internet dengan baik.', 'error')
+                        console.log(err)
+                    }) 
+                   }else{
+                    Swal.fire("oops","Thumbnail testimoni belum ter upload","error")
+                   }
+                }else{
+                    Swal.fire("oops","Form masih ada yang kosong cek kembali!","error")
+                } 
+            }
+        }
+        
         // upload thumnail
         
        
@@ -136,7 +149,13 @@ const onImageInsert = (args) => {
     });
     return files.length > 0;
   };
-
+  const textCounter=(e)=>{
+    if(e.target.id == "judul"){
+         setTitleLength(e.target.value.length)
+    }else{
+        setDescLength(e.target.value.length)
+    }
+ }
   const onMount = (event) => {
         const state = event.viewProps.state;
         const plugins = [...state.plugins, insertImagePlugin(onImageInsert)];
@@ -158,17 +177,15 @@ if(user != undefined){
        <div className="container mt-5">
        <h1 className="pt-5">Create article</h1>
             <div className="mb-3 col-8">
-                <label htmlFor="kategori" className="form-label">Kategori artikel</label>
-                <input type="text" className="form-control" id="kategori" aria-describedby="kategori" placeholder="Masukan kategori" ref={kategori}/>
-            </div>
-            <div className="mb-3 col-8">
                 <label htmlFor="judul" className="form-label">Judul</label>
-                <input type="email" className="form-control" id="judul" aria-describedby="judul" placeholder="judul artikel" ref={judul}/>
+                <input type="text" onChange={textCounter} className="form-control" id="judul" aria-describedby="judul" placeholder="judul artikel" ref={judul}/>
+                <div className="d-flex justify-content-end">{titleLength>0 ? <p>{titleLength<=60?<span>{titleLength}</span>:<span className="text-danger">{titleLength}</span>}</p>:<p></p>}</div>
             </div>
             <div className="mb-3 col-8">
                 <label htmlFor="judul" className="form-label">Caption</label>
-                <textarea type="text" className="form-control" id="caption" aria-describedby="caption" placeholder="Caption artikel" ref={caption}/>
-            </div>
+                <textarea onChange={textCounter} type="text" className="form-control" id="caption" aria-describedby="caption" placeholder="Caption artikel" ref={caption}/>
+                <div className="d-flex justify-content-end">  <div >{descLength>0 ? <p>{descLength<=200?<span>{descLength}</span>:<span className="text-danger">{descLength}</span>}</p>:<p className="text-right"></p>}</div></div>
+           </div>
             <div className="mb-3 col-8">
                 <label htmlFor="judul" className="form-label">Thumbnail</label>
                 <Input type="file" id="thumbnail" name="customFile" label={thumbnailName} onChange={onAddFileImageChange} />
