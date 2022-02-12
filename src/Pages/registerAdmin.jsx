@@ -5,7 +5,7 @@ const RegisterPages = (props) => {
 
   return (
     <div>
-        <HeaderPage/>
+        <HeaderPage kontak={props.kontak}/>
         <div className="content-page-after-header">
         
         </div>

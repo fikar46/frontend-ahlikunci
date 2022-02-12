@@ -20,20 +20,23 @@ const CarousellPage = (props) => {
     const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
   }
+  const whatsappFunc=()=>{
+    window.open(`https://api.whatsapp.com/send?phone=${props.kontak.whatsapp}`, '_blank')
+  }
   const items = [
     {
       src: carousellItem.carousell_1,
-      altText: 'Slide 1',
+      altText: 'Ahli kunci tangerang',
       caption: 'Slide 1'
     },
     {
       src: carousellItem.carousell_2,
-      altText: 'Slide 2',
+      altText: 'Ahli kunci tangerang',
       caption: 'Slide 2'
     },
     {
       src: carousellItem.carousell_3,
-      altText: 'Slide 3',
+      altText: 'Ahli kunci tangerang',
       caption: 'Slide 3'
     }
   ];
@@ -63,7 +66,7 @@ const CarousellPage = (props) => {
           onExited={() => setAnimating(false)}
           key={item.src}
         >
-          <img src={`https://storage.siapptn.com/image/blog/${item.src}`} alt={item.altText} className="img-fluid-carousell" width="100%" height="700px"/>
+          <img src={`https://storage.siapptn.com/image/blog/${item.src}`} onClick={whatsappFunc} alt={item.altText} className="img-fluid-carousell pointer" width="100%" height="700px"/>
         </CarouselItem>
       );
     }else{

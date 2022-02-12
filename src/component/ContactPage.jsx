@@ -17,7 +17,7 @@ const ContactPage = (props) => {
                     <h1 className="text-utama">Kontak Kami</h1>
                     <p className="text-dark">Segera hubungi kami untuk informasi selengkapnya mengenai jasa ahli kunci mobil, anda bisa datang ke workshop kami atau kami langsung meluncur ke lokasi anda!</p>
                     <a href={`https://api.whatsapp.com/send?phone=${kontak.whatsapp}`}><button className="btn btn-whatsapp mb-3"><i className='fab fa-whatsapp'></i> Klik disini untuk Whatsapp kami</button></a><br/>
-                    <a href={`tel:${kontak.telphone}`}><button className="btn btn-telfon"><i className='fas fa-phone-alt'></i> {kontak.telphone}</button></a>
+                    <a href={`tel:${kontak.telphone}`}><button className="btn btn-telfon"><i className='fas fa-phone'></i> {kontak.telphone}</button></a>
                     <div className="mt-3">
                     <hr/>
                         <h3>Lokasi workshop</h3>

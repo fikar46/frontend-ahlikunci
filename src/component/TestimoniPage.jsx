@@ -9,7 +9,7 @@ const TestimoniPage = (props) => {
     },[])
     const getAllTesti=()=>{
         axios.post(`${koneksi}/kunci/getalltestimoni`,{
-            page:0
+            page:0,unique:0
         }).then((res)=>{
             var data = res.data.result.filter((item)=> {
                 return item.status_blog != "reject"

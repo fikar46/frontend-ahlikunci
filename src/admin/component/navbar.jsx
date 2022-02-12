@@ -62,7 +62,7 @@ const HeaderPageAdmin = (props) => {
         </div>
         <div className="bg-black">
       <Navbar color="black" dark expand="md" className="navbar-fixed-top navbar-inverse container" >
-        <NavbarBrand href="/"><img src="./logo.png" className="img-fluid logo-image" alt="logo" loading="lazy"/></NavbarBrand>
+        <NavbarBrand href="/"><img src="https://kunci.siapptn.com/logo.png" className="img-fluid logo-image" alt="logo" loading="lazy"/></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse className="justify-content-end" isOpen={isOpen} navbar>
           <Nav className="mr-auto " navbar>

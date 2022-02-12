@@ -37,6 +37,7 @@ function App() {
       setKontak(res.data[0])
     })
   }
+ 
   return (
     <BrowserRouter>
     <Routes>
@@ -44,19 +45,19 @@ function App() {
       <Route path="/tentang-kami" element={<TentangPages kontak={kontak}/>}/>
       <Route path="/layanan" element={<LayananPages kontak={kontak}/>}/>
       <Route path="/kontak" element={<KontakPages kontak={kontak}/>}/>
-      <Route path="/adminkeys" element={<HomePageAdmin />}/>
-      <Route path="/login-admin" element={<LoginPageAdmin />}/>
-      <Route path="/user-management" element={<UserManagementPage />}/>
-      <Route path="/testimoni-management" element={<TesimoniPageAdmin />}/>
-      <Route path="/buat-testimoni" element={<CreateTestimoniPagesAdmin />}/>
-      <Route path="/update-testimoni/:id" element={<UpdateTestimoniPagesAdmin/>}/>
-      <Route path="/layanan-management" element={<LayananPageAdmin/>}/>
-      <Route path="/tambah-layanan" element={<LayananCreatePageAdmin/>}/>
-      <Route path="/update-layanan/:id" element={<LayananUpdatePageAdmin/>}/>
+      <Route path="/adminkeys" element={<HomePageAdmin kontak={kontak}/>}/>
+      <Route path="/login-admin" element={<LoginPageAdmin kontak={kontak}/>}/>
+      <Route path="/user-management" element={<UserManagementPage kontak={kontak}/>}/>
+      <Route path="/testimoni-management" element={<TesimoniPageAdmin kontak={kontak}/>}/>
+      <Route path="/buat-testimoni" element={<CreateTestimoniPagesAdmin kontak={kontak}/>}/>
+      <Route path="/update-testimoni/:id" element={<UpdateTestimoniPagesAdmin kontak={kontak}/>}/>
+      <Route path="/layanan-management" element={<LayananPageAdmin kontak={kontak}/>}/>
+      <Route path="/tambah-layanan" element={<LayananCreatePageAdmin kontak={kontak}/>}/>
+      <Route path="/update-layanan/:id" element={<LayananUpdatePageAdmin kontak={kontak}/>}/>
 
-      <Route path="/carousell-management" element={<CarousellPageAdmin/>}/>
-      <Route path="/kontak-management" element={<ContactPageAdmin/>}/>
-      <Route path="/meta-management" element={<MetaManagementAdmin/>}/>
+      <Route path="/carousell-management" element={<CarousellPageAdmin kontak={kontak}/>}/>
+      <Route path="/kontak-management" element={<ContactPageAdmin kontak={kontak}/>}/>
+      <Route path="/meta-management" element={<MetaManagementAdmin kontak={kontak}/>}/>
       <Route path="/testimoni/:id" element={<TestimoniPages kontak={kontak}/>}/>
       <Route path="/all-testimoni" element={<AllTestimoniPages kontak={kontak}/>}/>
     </Routes>

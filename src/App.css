@@ -135,10 +135,10 @@ span.font-weight-bold {
   margin-bottom: 15px;
 }
 .image-card-service {
-  height: 250px;
+  height: 200px;
 }
 .image-card-testimoni{
-  height: 300px;
+  height: 200px;
 }
 .bg-layanan{
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../public/asset/bg-layanan.jpeg');
@@ -242,4 +242,24 @@ span.pr-5.icon-sosmed {
 
 #myBtn-phone:hover {
   background-color: #555;
+}
+.pointer {
+  cursor: pointer;
+}
+.slick-prev:before, .slick-next:before {
+  font-family: 'slick';
+  font-size: 30px!important;
+  line-height: 1;
+  opacity: .75;
+  color: #383535 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.slick-prev {
+  left: -38px !important;
+}
+@media only screen and (max-width: 700px) {
+  .slick-prev {
+    left: -19px !important;
+  }
 }

@@ -6,7 +6,8 @@ import axios from 'axios';
 // import {Helmet} from "react-helmet";
 import { Markup } from "interweave";
 import { koneksi } from '../environtment';
-function TestimoniPageDetail(){
+import {Helmet} from "react-helmet";
+function TestimoniPageDetail(props){
   let { id,judul } = useParams();
   const [blogPage,setBlogPage] = useState({})
   var user = JSON.parse(localStorage.getItem("data"))
@@ -25,7 +26,38 @@ function TestimoniPageDetail(){
 ];
     return(
        <div className="container mt-5">
-        
+        <Helmet>
+              <title>{blogPage.judul}</title>
+              <meta name="description" content={blogPage.caption} />
+              <meta name="robots" content="index, follow" />
+              <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+              <meta property="type" content="article" />
+              <meta property="image" content={`https://storage.siapptn.com/image/blog/${blogPage.thumbnail}`} />
+              <meta property="title" content={blogPage.judul} />
+              <meta property="description" content={blogPage.caption} />
+              <meta property="url" content={window.location.href} />
+              <meta property="site_name" content="zkeys.id" />
+              <meta name="keywords" content={blogPage.caption} />
+              <meta name="googlebot" content="index, follow, follow" />
+              <meta name="author" content="zkeys" />
+              <meta name="language" content="id" />
+              <meta name="geo.country" content="id" />
+              <meta httpEquiv="content-language" content="In-Id" />
+              <meta name="geo.placename" content="Indonesia" />
+              <meta property="og:type" content="article" />
+              <meta property="og:image" content={`https://storage.siapptn.com/image/blog/${blogPage.thumbnail}`} />
+              <meta property="og:title" content={blogPage.judul} />
+              <meta property="og:description" content={blogPage.caption} />
+              <meta property="og:url" content={window.location.href} />
+              <meta property="og:site_name" content="zkeys.id" />
+              <meta name="twitter:card" content="summary_large_image" />
+              <meta name="twitter:site" content={`@${props.kontak.twitter}`} />
+              <meta name="twitter:creator" content={`@${props.kontak.twitter}`} />
+              <meta name="twitter:title" content={blogPage.judul} />
+              <meta name="twitter:description" content={blogPage.caption}/>
+              <meta name="twitter:image" content={`https://storage.siapptn.com/image/blog/${blogPage.thumbnail}`}/>
+              <link rel="amphtml" href={window.location.href} />
+        </Helmet>
         <div className="row g-5">
         <div className="col-12 col-md-8">
           <div className="blog-post">

@@ -5,14 +5,19 @@ import "slick-carousel/slick/slick-theme.css";
 import axios from 'axios';
 import { koneksi } from '../environtment';
 const ServicePage = (props) => {
+  var kontak = props.kontak
+    const redirectFunc=()=>{
+        window.open(`https://api.whatsapp.com/send?phone=${kontak.whatsapp}`,'_blank')
+    }
   var settings = {
     dots: true,
     infinite: true,
-    speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
     initialSlide: 0,
     autoplay:true,
+    speed: 2000,
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 1024,
@@ -55,14 +60,14 @@ const ServicePage = (props) => {
     var data = layanan.map((item)=>{
       return(
         <div>
-        <a href="#" className="text-dark "  style={{textDecoration:'none'}}>
-          <div className="card p-3">
+        
+          <div className="card p-3 pointer" >
                         <div className="image-card-service">
                             <img src={`https://storage.siapptn.com/image/blog/${item.foto}`} className="card-img-top img-card-size" alt=""></img>
                         </div>
                         <p>{item.nama}</p>  
+                        <button className="btn btn-utama" onClick={redirectFunc}>Buka</button>
             </div>
-        </a>
         </div>
       )
     })

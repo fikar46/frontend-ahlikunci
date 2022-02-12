@@ -7,7 +7,7 @@ const FooterPage = (props) => {
        <div className="container p-5">  
             <div className="row">
                 <div className="col-12 col-md-3">
-                   <img src="./logo.png" width='150px' alt="logo_zkeys"/>
+                   <img src="https://kunci.siapptn.com/logo.png" width='150px' alt="logo_zkeys"/>
                    <div className="col-md-12 mt-3">
                     <a href={kontak.facebook} target="_blank" className="text-utama" style={{textDecoration:'none'}}><span className="pr-5 icon-sosmed"><i className='fab fa-facebook'></i></span></a>
                     <a href={kontak.instagram} target="_blank" className="text-utama" style={{textDecoration:'none'}}><span className="pr-5 icon-sosmed"><i className='fab fa-instagram'></i></span></a>
@@ -32,7 +32,7 @@ const FooterPage = (props) => {
                     <div className="">
                         <p className="text-white">Segera hubungi kami untuk informasi selengkapnya mengenai jasa ahli kunci mobil, anda bisa datang ke workshop kami atau kami langsung meluncur ke lokasi anda!</p>
                         <a href={`https://api.whatsapp.com/send?phone=${kontak.whatsapp}`} className="text-utama" style={{textDecoration:'none'}}><i className='fab fa-whatsapp'></i> {kontak.whatsapp}</a><br/>
-                        <a href={`tel:${kontak.telphone}`} className="text-utama" style={{textDecoration:'none'}}><i className='fas fa-phone-alt'></i> {kontak.telphone}</a>
+                        <a href={`tel:${kontak.telphone}`} className="text-utama" style={{textDecoration:'none'}}><i className='fas fa-phone'></i> {kontak.telphone}</a>
                     
                     </div>
                 </div>

@@ -5,6 +5,7 @@ import axios from 'axios';
 import { koneksi } from '../environtment';
 import MapPaginationComponent from '../admin/helper/paginationComponent';
 import FooterPage from '../component/Footer';
+import {Helmet} from "react-helmet";
 const AllTestimoniPages = (props) => {
     const [testi,setTesti] = useState([]);
     const [page, setPage ] =useState(0)
@@ -14,7 +15,7 @@ const AllTestimoniPages = (props) => {
     },[])
     const getAllTesti=()=>{
         axios.post(`${koneksi}/kunci/getalltestimoni`,{
-            page:page*10
+            page:page*10,unique:page*10
         }).then((res)=>{
             var data = res.data.result.filter((item)=> {
                 return item.status_blog != "reject"
@@ -43,7 +44,39 @@ const AllTestimoniPages = (props) => {
     }
   return (
     <div>
-        <HeaderPage/>
+        <HeaderPage kontak={props.kontak}/>
+        <Helmet>
+              <title>Testimoni Pelanggan</title>
+              <meta name="description" content={'Testimoni dari beberapa pelanggan kami yang telah menggunakan jasa perbaikan kunci ditempat kami, kami juga bisa datang langsung kelokasi pelanggan kami'} />
+              <meta name="robots" content="index, follow" />
+              <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+              <meta property="type" content="article" />
+              <meta property="image" content={`https://kunci.siapptn.com/logo.png`} />
+              <meta property="title" content={'Testimoni Pelanggan'} />
+              <meta property="description" content={'Testimoni dari beberapa pelanggan kami yang telah menggunakan jasa perbaikan kunci ditempat kami, kami juga bisa datang langsung kelokasi pelanggan kami'} />
+              <meta property="url" content={window.location.href} />
+              <meta property="site_name" content="zkeys.id" />
+              <meta name="keywords" content={'Testimoni dari beberapa pelanggan kami yang telah menggunakan jasa perbaikan kunci ditempat kami, kami juga bisa datang langsung kelokasi pelanggan kami'} />
+              <meta name="googlebot" content="index, follow, follow" />
+              <meta name="author" content="zkeys" />
+              <meta name="language" content="id" />
+              <meta name="geo.country" content="id" />
+              <meta httpEquiv="content-language" content="In-Id" />
+              <meta name="geo.placename" content="Indonesia" />
+              <meta property="og:type" content="article" />
+              <meta property="og:image" content={`https://kunci.siapptn.com/logo.png`} />
+              <meta property="og:title" content={'Testimoni Pelanggan'} />
+              <meta property="og:description" content={'Testimoni dari beberapa pelanggan kami yang telah menggunakan jasa perbaikan kunci ditempat kami, kami juga bisa datang langsung kelokasi pelanggan kami'} />
+              <meta property="og:url" content={window.location.href} />
+              <meta property="og:site_name" content="zkeys.id" />
+              <meta name="twitter:card" content="summary_large_image" />
+              <meta name="twitter:site" content={`@${props.kontak.twitter}`} />
+              <meta name="twitter:creator" content={`@${props.kontak.twitter}`} />
+              <meta name="twitter:title" content={'Testimoni Pelanggan'} />
+              <meta name="twitter:description" content={'Testimoni dari beberapa pelanggan kami yang telah menggunakan jasa perbaikan kunci ditempat kami, kami juga bisa datang langsung kelokasi pelanggan kami'}/>
+              <meta name="twitter:image" content={`https://kunci.siapptn.com/logo.png`}/>
+              <link rel="amphtml" href={window.location.href} />
+        </Helmet>
         <div className="content-page-after-header">
             <div className="container mt-5">
                 <h1 className="mt-3 text-center">Semua testimoni</h1>

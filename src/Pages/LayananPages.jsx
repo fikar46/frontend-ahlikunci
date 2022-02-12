@@ -10,7 +10,7 @@ const LayananPages = (props) => {
 
   return (
     <div>
-        <HeaderPage/>
+        <HeaderPage kontak={props.kontak}/>
         <div className="content-page-after-header">
         <div className="mb-3"></div>
         <FiturLayanan/>

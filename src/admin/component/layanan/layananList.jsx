@@ -18,7 +18,7 @@ function LayananListComponentAdmin(){
       },[]);
     const getLayananAdmin=(page)=>{
         Axios.post(`${koneksi}/kunci/getlayanan`,{
-            page:page*10
+            page:page*10,unique:page*10
         }).then((res)=>{
             setBlogData(res.data.result)
             setPagination(res.data.pagination)

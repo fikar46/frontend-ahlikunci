@@ -11,25 +11,24 @@ import {
 
 const HeaderPage = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-
+  var kontak = props.kontak;
   const toggle = () => setIsOpen(!isOpen);
-
   return (
     <div className="navbar-fixed-top">
         <div className="bg-utama p-2">
             <div className="container d-flex justify-content-between">  
             <span>Ahlinya tukang kunci Mobil</span>
             <div className="">
-                <span className="pr-5"><i className='fab fa-facebook'></i></span>
-                <span className="pr-5"> <i className='fab fa-instagram '></i></span>
-                <span className="pr-5"> <i className='fab fa-youtube '></i></span>
-                <span className="pr-5"> <i className='fab fa-twitter '></i></span>
+            <a href={kontak.facebook} target="_blank"  style={{textDecoration:'none',color:"black"}}><span className="pr-5"><i className='fab fa-facebook'></i></span></a>
+                    <a href={kontak.instagram} target="_blank"  style={{textDecoration:'none',color:"black"}}><span className="pr-5 "><i className='fab fa-instagram'></i></span></a>
+                    <a href={kontak.youtube} target="_blank"  style={{textDecoration:'none',color:"black"}}><span className="pr-5 "><i className='fab fa-youtube'></i></span></a>
+                    <a href={kontak.twitter} target="_blank"  style={{textDecoration:'none',color:"black"}}><span className="pr-5"><i className='fab fa-twitter'></i></span></a>
             </div>
             </div>
         </div>
         <div className="bg-black">
       <Navbar color="black" dark expand="md" className="navbar-fixed-top navbar-inverse container" >
-        <NavbarBrand href="/"><img src="./logo.png" className="img-fluid logo-image" alt="logo" loading="lazy"/></NavbarBrand>
+        <NavbarBrand href="/"><img src="https://kunci.siapptn.com/logo.png" className="img-fluid logo-image" alt="logo" loading="lazy"/></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse className="justify-content-end" isOpen={isOpen} navbar>
           <Nav className="mr-auto " navbar>

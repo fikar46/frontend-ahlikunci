@@ -9,6 +9,9 @@ import ServicePage from '../component/ServicePage';
 import TestimoniPage from '../component/TestimoniPage';
 import ContactPage from '../component/ContactPage';
 import FooterPage from '../component/Footer';
+import axios from 'axios';
+import { koneksi } from '../environtment';
+import {Helmet} from "react-helmet";
 const HomesPage = (props) => {
   var kontak = props.kontak;
 const handleScroll = () => {
@@ -21,6 +24,7 @@ const handleScroll = () => {
     }
 };
   useEffect(()=>{
+    getMeta()
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
         window.removeEventListener('scroll', handleScroll);
@@ -37,19 +41,56 @@ const handleScroll = () => {
   const phoneFunc=()=>{
     window.open(`tel:${kontak.telphone}`, '_blank')
   }
+  const [meta,setMeta] = useState({})
+  const getMeta=()=>{
+    axios.post(`${koneksi}/kunci/getmeta`).then((res)=>{
+      setMeta(res.data[0])
+    })
+  }
   return (
     <div>
-       
-        <HeaderPage/>
+        <Helmet>
+              <title>{meta.title}</title>
+              <meta name="description" content={meta.description} />
+              <meta name="robots" content="index, follow" />
+              <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+              <meta property="type" content="article" />
+              <meta property="image" content="https://kunci.siapptn.com/logo.png" />
+              <meta property="title" content={meta.title} />
+              <meta property="description" content={meta.description} />
+              <meta property="url" content={window.location.href} />
+              <meta property="site_name" content="zkeys.id" />
+              <meta name="keywords" content={meta.description} />
+              <meta name="googlebot" content="index, follow, follow" />
+              <meta name="author" content="zkeys" />
+              <meta name="language" content="id" />
+              <meta name="geo.country" content="id" />
+              <meta httpEquiv="content-language" content="In-Id" />
+              <meta name="geo.placename" content="Indonesia" />
+              <meta property="og:type" content="article" />
+              <meta property="og:image" content='https://kunci.siapptn.com/logo.png' />
+              <meta property="og:title" content={meta.title} />
+              <meta property="og:description" content={meta.description} />
+              <meta property="og:url" content={window.location.href} />
+              <meta property="og:site_name" content="zkeys.id" />
+              <meta name="twitter:card" content="summary_large_image" />
+              <meta name="twitter:site" content={`@${kontak.twitter}`} />
+              <meta name="twitter:creator" content={`@${kontak.twitter}`} />
+              <meta name="twitter:title" content={meta.title} />
+              <meta name="twitter:description" content={meta.description}/>
+              <meta name="twitter:image" content='https://kunci.siapptn.com/logo.png'/>
+              <link rel="amphtml" href={window.location.href} />
+        </Helmet>
+        <HeaderPage kontak={kontak}/>
         <div className="content-page-after-header">
         <button className="btn btn-back-top" onClick={whatsappFunc} id="myBtn-whatsapp" title="Go to top"><i className='fab fa-whatsapp'></i></button>
-        <button className="btn btn-back-top" onClick={phoneFunc} id="myBtn-phone" title="Go to top"><i class='fas fa-phone-alt'></i></button>
+        <button className="btn btn-back-top" onClick={phoneFunc} id="myBtn-phone" title="Go to top"><i class='fas fa-phone'></i></button>
         <button className="btn btn-back-top" onClick={topFunction} id="myBtn" title="Go to top"><i class='fas fa-chevron-up'></i></button>
-        <CarousellPage/>
+        <CarousellPage kontak={props.kontak}/>
         <FiturLayanan/>
         <AboutPage/>
-        <PelayananPage/>
-        <ServicePage/>
+        <PelayananPage kontak={props.kontak}/>
+        <ServicePage kontak={props.kontak}/>
         <TestimoniPage/>
         <ContactPage kontak={props.kontak}/>
         <FooterPage kontak={props.kontak}/>

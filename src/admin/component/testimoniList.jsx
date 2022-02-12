@@ -18,7 +18,7 @@ function TesimoniListPageAdmin(){
       },[]);
     const getBlogAdmin=(page)=>{
         Axios.post(`${koneksi}/kunci/getalltestimoni`,{
-            page:page*10
+            page:page*10,unique:page*10
         }).then((res)=>{
             setBlogData(res.data.result)
             setPagination(res.data.pagination)
