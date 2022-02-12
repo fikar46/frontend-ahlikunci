@@ -263,3 +263,6 @@ span.pr-5.icon-sosmed {
     left: -19px !important;
   }
 }
+textarea#pertanyaan {
+  height: 200px;
+}

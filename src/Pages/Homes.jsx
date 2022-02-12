@@ -12,6 +12,7 @@ import FooterPage from '../component/Footer';
 import axios from 'axios';
 import { koneksi } from '../environtment';
 import {Helmet} from "react-helmet";
+import EmailSenderComponent from '../component/EmailSender';
 const HomesPage = (props) => {
   var kontak = props.kontak;
 const handleScroll = () => {
@@ -93,6 +94,7 @@ const handleScroll = () => {
         <ServicePage kontak={props.kontak}/>
         <TestimoniPage/>
         <ContactPage kontak={props.kontak}/>
+        <EmailSenderComponent kontak={props.kontak}/>
         <FooterPage kontak={props.kontak}/>
         </div>
     </div>
