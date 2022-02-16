@@ -51,7 +51,7 @@ const AllTestimoniPages = (props) => {
               <meta name="robots" content="index, follow" />
               <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
               <meta property="type" content="article" />
-              <meta property="image" content={`https://kunci.siapptn.com/logo.png`} />
+              <meta property="image" content={`https://zkeys.id/logo.png`} />
               <meta property="title" content={'Testimoni Pelanggan'} />
               <meta property="description" content={'Testimoni dari beberapa pelanggan kami yang telah menggunakan jasa perbaikan kunci ditempat kami, kami juga bisa datang langsung kelokasi pelanggan kami'} />
               <meta property="url" content={window.location.href} />
@@ -64,7 +64,7 @@ const AllTestimoniPages = (props) => {
               <meta httpEquiv="content-language" content="In-Id" />
               <meta name="geo.placename" content="Indonesia" />
               <meta property="og:type" content="article" />
-              <meta property="og:image" content={`https://kunci.siapptn.com/logo.png`} />
+              <meta property="og:image" content={`https://zkeys.id/logo.png`} />
               <meta property="og:title" content={'Testimoni Pelanggan'} />
               <meta property="og:description" content={'Testimoni dari beberapa pelanggan kami yang telah menggunakan jasa perbaikan kunci ditempat kami, kami juga bisa datang langsung kelokasi pelanggan kami'} />
               <meta property="og:url" content={window.location.href} />
@@ -74,7 +74,7 @@ const AllTestimoniPages = (props) => {
               <meta name="twitter:creator" content={`@${props.kontak.twitter}`} />
               <meta name="twitter:title" content={'Testimoni Pelanggan'} />
               <meta name="twitter:description" content={'Testimoni dari beberapa pelanggan kami yang telah menggunakan jasa perbaikan kunci ditempat kami, kami juga bisa datang langsung kelokasi pelanggan kami'}/>
-              <meta name="twitter:image" content={`https://kunci.siapptn.com/logo.png`}/>
+              <meta name="twitter:image" content={`https://zkeys.id/logo.png`}/>
               <link rel="amphtml" href={window.location.href} />
         </Helmet>
         <div className="content-page-after-header">
