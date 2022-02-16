@@ -34,10 +34,10 @@ const HeaderPageAdmin = (props) => {
       cookies.remove('popupafterlogin');
       cookies.remove('u-nkt');
     }else{
-      cookies.remove('dataUser',{domain:".siapptn.com"})
-      cookies.remove('idUser',{domain:".siapptn.com"})
-      cookies.remove('popupafterlogin',{domain:".siapptn.com"})
-      cookies.remove('u-nkt',{domain:".siapptn.com"})
+      cookies.remove('dataUser',{domain:".zkeys.id"})
+      cookies.remove('idUser',{domain:".zkeys.id"})
+      cookies.remove('popupafterlogin',{domain:".zkeys.id"})
+      cookies.remove('u-nkt',{domain:".zkeys.id"})
       cookies.remove('dataUser');
       cookies.remove('idUser');
       cookies.remove('popupafterlogin');
@@ -62,7 +62,7 @@ const HeaderPageAdmin = (props) => {
         </div>
         <div className="bg-black">
       <Navbar color="black" dark expand="md" className="navbar-fixed-top navbar-inverse container" >
-        <NavbarBrand href="/"><img src="https://kunci.siapptn.com/logo.png" className="img-fluid logo-image" alt="logo" loading="lazy"/></NavbarBrand>
+        <NavbarBrand href="/"><img src="https://kunci.zkey.id/logo.png" className="img-fluid logo-image" alt="logo" loading="lazy"/></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse className="justify-content-end" isOpen={isOpen} navbar>
           <Nav className="mr-auto " navbar>

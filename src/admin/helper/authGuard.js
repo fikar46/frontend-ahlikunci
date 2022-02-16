@@ -25,9 +25,9 @@ export const keepLogin =(username,id_user)=>{
                         cookies.remove('idUser');
                         cookies.remove('u-nkt');
                       }else{
-                        cookies.remove('dataUser',{domain:".siapptn.com"})
-                        cookies.remove('idUser',{domain:".siapptn.com"})
-                        cookies.remove('u-nkt',{domain:".siapptn.com"});
+                        cookies.remove('dataUser',{domain:".zkeys.id"})
+                        cookies.remove('idUser',{domain:".zkeys.id"})
+                        cookies.remove('u-nkt',{domain:".zkeys.id"});
                         cookies.remove('dataUser');
                         cookies.remove('idUser');
                         cookies.remove('u-nkt');
@@ -44,9 +44,9 @@ export const keepLogin =(username,id_user)=>{
                             cookies.remove('idUser');
                             cookies.remove('u-nkt');
                           }else{
-                            cookies.remove('dataUser',{domain:".siapptn.com"})
-                            cookies.remove('idUser',{domain:".siapptn.com"})
-                            cookies.remove('u-nkt',{domain:".siapptn.com"});
+                            cookies.remove('dataUser',{domain:".zkeys.id"})
+                            cookies.remove('idUser',{domain:".zkeys.id"})
+                            cookies.remove('u-nkt',{domain:".zkeys.id"});
                             cookies.remove('dataUser');
                             cookies.remove('idUser');
                             cookies.remove('u-nkt');
@@ -62,9 +62,9 @@ export const keepLogin =(username,id_user)=>{
                             cookies.remove('idUser');
                             cookies.remove('u-nkt');
                           }else{
-                            cookies.remove('dataUser',{domain:".siapptn.com"})
-                            cookies.remove('idUser',{domain:".siapptn.com"})
-                            cookies.remove('u-nkt',{domain:".siapptn.com"});
+                            cookies.remove('dataUser',{domain:".zkeys.id"})
+                            cookies.remove('idUser',{domain:".zkeys.id"})
+                            cookies.remove('u-nkt',{domain:".zkeys.id"});
                             cookies.remove('dataUser');
                             cookies.remove('idUser');
                             cookies.remove('u-nkt');
@@ -96,9 +96,9 @@ export const keepLogin =(username,id_user)=>{
                         cookies.remove('idUser');
                         cookies.remove('u-nkt');
                       }else{
-                        cookies.remove('dataUser',{domain:".siapptn.com"})
-                        cookies.remove('idUser',{domain:".siapptn.com"})
-                        cookies.remove('u-nkt',{domain:".siapptn.com"});
+                        cookies.remove('dataUser',{domain:".zkeys.id"})
+                        cookies.remove('idUser',{domain:".zkeys.id"})
+                        cookies.remove('u-nkt',{domain:".zkeys.id"});
                         cookies.remove('dataUser');
                         cookies.remove('idUser');
                         cookies.remove('u-nkt');
@@ -115,9 +115,9 @@ export const keepLogin =(username,id_user)=>{
                         cookies.remove('idUser');
                         cookies.remove('u-nkt');
                       }else{
-                        cookies.remove('dataUser',{domain:".siapptn.com"})
-                        cookies.remove('idUser',{domain:".siapptn.com"})
-                        cookies.remove('u-nkt',{domain:".siapptn.com"});
+                        cookies.remove('dataUser',{domain:".zkeys.id"})
+                        cookies.remove('idUser',{domain:".zkeys.id"})
+                        cookies.remove('u-nkt',{domain:".zkeys.id"});
                         cookies.remove('dataUser');
                         cookies.remove('idUser');
                         cookies.remove('u-nkt');
@@ -133,9 +133,9 @@ export const keepLogin =(username,id_user)=>{
                         cookies.remove('idUser');
                         cookies.remove('u-nkt');
                       }else{
-                        cookies.remove('dataUser',{domain:".siapptn.com"})
-                        cookies.remove('idUser',{domain:".siapptn.com"})
-                        cookies.remove('u-nkt',{domain:".siapptn.com"});
+                        cookies.remove('dataUser',{domain:".zkeys.id"})
+                        cookies.remove('idUser',{domain:".zkeys.id"})
+                        cookies.remove('u-nkt',{domain:".zkeys.id"});
                         cookies.remove('dataUser');
                         cookies.remove('idUser');
                         cookies.remove('u-nkt');

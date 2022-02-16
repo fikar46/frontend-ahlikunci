@@ -19,9 +19,9 @@ const LoginPageAdmin = (props) => {
                     cookies.set('dataUser',username,{path: '/'})
                     cookies.set('idUser',res.data[0].id,{path: '/'})
                 }else{
-                    cookies.set('u-nkt',res.data[0].token,{path: '/',domain:".siapptn.com"})
-                    cookies.set('dataUser',username,{path: '/',domain:".siapptn.com"})
-                    cookies.set('idUser',res.data[0].id,{path: '/',domain:".siapptn.com"})
+                    cookies.set('u-nkt',res.data[0].token,{path: '/',domain:".zkeys.id"})
+                    cookies.set('dataUser',username,{path: '/',domain:".zkeys.id"})
+                    cookies.set('idUser',res.data[0].id,{path: '/',domain:".zkeys.id"})
                 }
                 window.location.href='/adminkeys'
             }else{
@@ -45,8 +45,8 @@ const LoginPageAdmin = (props) => {
                         cookies.remove('dataUser');
                         cookies.remove('idUser');
                       }else{
-                        cookies.remove('dataUser',{domain:".siapptn.com"})
-                        cookies.remove('idUser',{domain:".siapptn.com"})
+                        cookies.remove('dataUser',{domain:".zkeys.id"})
+                        cookies.remove('idUser',{domain:".zkeys.id"})
                         cookies.remove('dataUser');
                         cookies.remove('idUser');
                       }
