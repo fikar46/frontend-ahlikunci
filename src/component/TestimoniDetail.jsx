@@ -7,6 +7,8 @@ import axios from 'axios';
 import { Markup } from "interweave";
 import { koneksi } from '../environtment';
 import {Helmet} from "react-helmet";
+
+const queryString = require('query-string');
 function TestimoniPageDetail(props){
   let { id,judul } = useParams();
   const [blogPage,setBlogPage] = useState({})
@@ -24,6 +26,14 @@ function TestimoniPageDetail(props){
   const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni",
   "Juli", "Agustus", "September", "Oktober", "November", "Desember"
 ];
+const mapVideo=()=>{
+if(blogPage.youtube != null){
+  const parsed = queryString.parse(blogPage.youtube);
+  var videoId =parsed[Object.keys(parsed)[0]];
+  return<iframe width="560" height="315" src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
+}
+}
     return(
        <div className="container mt-5">
         <Helmet>
@@ -70,7 +80,8 @@ function TestimoniPageDetail(props){
             <p className="caption-w">{blogPage.caption}</p>
             <hr />
            
-            <Markup content= {blogPage.konten} tagName="span"/>
+            <Markup content={blogPage.konten} tagName="span"/>
+           {mapVideo()}
           </div>
           
         </div>

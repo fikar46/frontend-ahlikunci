@@ -59,6 +59,7 @@ function UpdateTestimoniAdmin(){
     const judul = React.useRef("");
     const kategori = React.useRef("");
     const caption = React.useRef("");
+    const youtube = React.useRef("");
     var user = JSON.parse(localStorage.getItem("data"))
    const konten =(e)=>{
     setValue(e.value);
@@ -85,8 +86,10 @@ function UpdateTestimoniAdmin(){
    const postKonten = () => {
         const view = editor.current.view;
         var judulBlog = judul.current.value;
+        console.log(judulBlog)
         var captionBlog = caption.current.value;
         var kategoriBlog = kategori.current.value
+        var youtubeBlog = youtube.current.value
         var konten = EditorUtils.getHtml(view.state)
         var id_user = cookies.get("idUser");
         var testiObj={
@@ -107,7 +110,7 @@ function UpdateTestimoniAdmin(){
                     Axios.post(`https://storage.siapptn.com/uploadblog`,formData)
                     .then((res) => {
                         Axios.post(`${koneksi}/kunci/updatetestimoni`,{
-                            id:testi.id,judul:judulBlog,thumbnail:namaThumbnail,caption:captionBlog,kategori:kategoriBlog,konten,id_user,status_blog:"publish",unique:id
+                            id:testi.id,judul:judulBlog,thumbnail:namaThumbnail,caption:captionBlog,kategori:kategoriBlog,konten,id_user,status_blog:"publish",unique:id,youtube:youtubeBlog
                         }).then((res)=>{
                             Swal.fire('success', 'Testimoni berhasil di update', 'success').then((res)=>{
                                 window.location.href="/testimoni-management"
@@ -120,7 +123,7 @@ function UpdateTestimoniAdmin(){
                     }) 
                 }else{
                     Axios.post(`${koneksi}/kunci/updatetestimoni`,{
-                        id:testi.id,judul:judulBlog,thumbnail:thumbnailName,caption:captionBlog,kategori:kategoriBlog,konten,id_user,status_blog:"publish",unique:id
+                        id:testi.id,judul:judulBlog,thumbnail:thumbnailName,caption:captionBlog,kategori:kategoriBlog,konten,id_user,status_blog:"publish",unique:id,youtube:youtubeBlog
                     }).then((res)=>{
                         Swal.fire('success', 'Testimoni berhasil di update', 'success').then((res)=>{
                             window.location.href="/testimoni-management"
@@ -238,6 +241,10 @@ if(user != undefined){
                 ref={editor}
                 onMount={onMount}
                 />
+            </div>
+            <div className="mb-3 col-8">
+                <label htmlFor="judul" className="form-label">Tambah youtube video (Optional)</label>
+                <textarea type="text" className="form-control" id="youtube" aria-describedby="youtube" placeholder="youtube url" ref={youtube} defaultValue={testi.youtube}/>
             </div>
             <div className="mb-3 col-8">
                 <button className="btn btn-utama" onClick={postKonten}>

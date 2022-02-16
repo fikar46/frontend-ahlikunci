@@ -55,6 +55,7 @@ function CreateTestimoniAdmin(){
     const [descLength,setDescLength] = useState(0)
     const kategori = React.useRef("");
     const caption = React.useRef("");
+    const youtube = React.useRef("");
     var user = JSON.parse(localStorage.getItem("data"))
    const konten =(e)=>{
     setValue(e.value);
@@ -65,6 +66,7 @@ function CreateTestimoniAdmin(){
         var captionBlog = caption.current.value;
         var kategoriBlog = kategori.current.value
         var konten = EditorUtils.getHtml(view.state)
+        var youtube = youtube.current.value;
         var id_user = cookies.get("idUser");
         if(judulBlog.length > 60){
             alert('Judul tidak boleh lebih dari 60 karakter')
@@ -90,7 +92,7 @@ function CreateTestimoniAdmin(){
                     Axios.post(`https://storage.siapptn.com/uploadblog`,formData)
                     .then((res) => {
                         Axios.post(`${koneksi}/kunci/posttestimoni`,{
-                            judul:judulBlog,thumbnail:namaThumbnail,caption:captionBlog,kategori:kategoriBlog,konten,id_user,status_blog:"publish"
+                            judul:judulBlog,thumbnail:namaThumbnail,caption:captionBlog,kategori:kategoriBlog,konten,id_user,status_blog:"publish",youtube
                         }).then((res)=>{
                             Swal.fire('success', 'Testimoni berhasil di update', 'success').then((res)=>{
                                 window.location.href="/testimoni-management"
@@ -219,6 +221,10 @@ if(user != undefined){
                 ref={editor}
                 onMount={onMount}
                 />
+            </div>
+            <div className="mb-3 col-8">
+                <label htmlFor="judul" className="form-label">Tambah youtube video (Optional)</label>
+                <textarea type="text" className="form-control" id="youtube" aria-describedby="youtube" placeholder="youtube url" ref={youtube}/>
             </div>
             <div className="mb-3 col-8">
                 <button className="btn btn-utama" onClick={postKonten}>
