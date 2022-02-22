@@ -81,6 +81,7 @@ const handleScroll = () => {
               <meta name="twitter:description" content={meta.description}/>
               <meta name="twitter:image" content='https://zkeys.id/logo.png'/>
               <link rel="amphtml" href={window.location.href} />
+              <link rel="canonical" href="https://www.zkeys.id/"></link>
         </Helmet>
         <HeaderPage kontak={kontak}/>
         <div className="content-page-after-header">
