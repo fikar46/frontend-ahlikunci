@@ -66,7 +66,6 @@ if(blogPage.youtube != null){
               <meta name="twitter:title" content={blogPage.judul} />
               <meta name="twitter:description" content={blogPage.caption}/>
               <meta name="twitter:image" content={`https://storage.siapptn.com/image/blog/${blogPage.thumbnail}`}/>
-              <link rel="amphtml" href={window.location.href} />
         </Helmet>
         <div className="row g-5">
         <div className="col-12 col-md-8">
