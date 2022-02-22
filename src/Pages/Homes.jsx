@@ -56,7 +56,7 @@ const handleScroll = () => {
               <meta name="robots" content="index, follow" />
               <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
               <meta property="type" content="article" />
-              <meta property="image" content="https://zkeys.id/logo.png" />
+              <meta property="image" content="https://zkeys.id/favicon.png" />
               <meta property="title" content={meta.title} />
               <meta property="description" content={meta.description} />
               <meta property="url" content={window.location.href} />
@@ -69,7 +69,7 @@ const handleScroll = () => {
               <meta httpEquiv="content-language" content="In-Id" />
               <meta name="geo.placename" content="Indonesia" />
               <meta property="og:type" content="article" />
-              <meta property="og:image" content='https://zkeys.id/logo.png' />
+              <meta property="og:image" content='https://zkeys.id/favicon.png' />
               <meta property="og:title" content={meta.title} />
               <meta property="og:description" content={meta.description} />
               <meta property="og:url" content={window.location.href} />
@@ -79,7 +79,7 @@ const handleScroll = () => {
               <meta name="twitter:creator" content={`@${kontak.twitter}`} />
               <meta name="twitter:title" content={meta.title} />
               <meta name="twitter:description" content={meta.description}/>
-              <meta name="twitter:image" content='https://zkeys.id/logo.png'/>
+              <meta name="twitter:image" content='https://zkeys.id/favicon.png'/>
               <link rel="canonical" href="https://www.zkeys.id/"></link>
         </Helmet>
         <HeaderPage kontak={kontak}/>
