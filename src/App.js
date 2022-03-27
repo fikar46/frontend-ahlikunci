@@ -26,6 +26,9 @@ import AllTestimoniPages from './Pages/AllTestimoni';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { koneksi } from './environtment';
+import ProfilePages from './Pages/ProfileAdmin';
+import ForgetPages from './component/ForgetPage';
+import ChangePasswordPages from './component/ChangePasswordPage';
 function App() {
   const [kontak,setKontak] = useState({})
   useEffect(()=>{
@@ -46,6 +49,7 @@ function App() {
       <Route path="/layanan" element={<LayananPages kontak={kontak}/>}/>
       <Route path="/kontak" element={<KontakPages kontak={kontak}/>}/>
       <Route path="/adminkeys" element={<HomePageAdmin kontak={kontak}/>}/>
+      <Route path="/profile-admin" element={<ProfilePages kontak={kontak}/>}/>
       <Route path="/login-admin" element={<LoginPageAdmin kontak={kontak}/>}/>
       <Route path="/user-management" element={<UserManagementPage kontak={kontak}/>}/>
       <Route path="/testimoni-management" element={<TesimoniPageAdmin kontak={kontak}/>}/>
@@ -60,6 +64,8 @@ function App() {
       <Route path="/meta-management" element={<MetaManagementAdmin kontak={kontak}/>}/>
       <Route path="/testimoni/:id" element={<TestimoniPages kontak={kontak}/>}/>
       <Route path="/all-testimoni" element={<AllTestimoniPages kontak={kontak}/>}/>
+      <Route path="/forget-password-admin" element={<ForgetPages kontak={kontak}/>}/>
+      <Route path="/change-password-forget" element={<ChangePasswordPages kontak={kontak}/>}/>
     </Routes>
   </BrowserRouter>
    

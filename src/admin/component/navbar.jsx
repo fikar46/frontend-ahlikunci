@@ -71,7 +71,7 @@ const HeaderPageAdmin = (props) => {
                 <span className="text-white font-weight-bold">{data.username}</span>
               </DropdownToggle>
               <DropdownMenu end>
-                <DropdownItem>
+                <DropdownItem href="/profile-admin">
                   Profile
                 </DropdownItem>
                 <DropdownItem divider />
