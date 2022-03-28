@@ -266,3 +266,7 @@ span.pr-5.icon-sosmed {
 textarea#pertanyaan {
   height: 200px;
 }
+img.card-img-top.img-card-size {
+  object-fit: cover; /* cover, contain, fill, scale-down */
+  object-position: center;
+}
