@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 Disallow:
 
-Sitemap: https://zkeys/sitemap.xml
+Sitemap: https://zkeys.id/sitemap.xml
