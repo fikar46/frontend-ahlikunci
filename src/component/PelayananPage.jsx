@@ -8,7 +8,7 @@ const PelayananPage = (props) => {
   return (
   <div className="bg-layanan">
        <div className="container mt-5 p-3">
-            <h1 className="text-center text-white py-5">Kami melayani</h1>
+            <h2 className="text-center text-white py-5">Kami melayani</h2>
           
                 <div className="row">
                

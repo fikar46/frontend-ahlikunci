@@ -14,7 +14,7 @@ const ContactPage = (props) => {
             </div>
             <div className="col-12 col-md-8 col-sm-12 col-xs-12">
                 <div className="content-about w-about-text">
-                    <h1 className="text-utama">Kontak Kami</h1>
+                    <h2 className="text-utama">Kontak Kami</h2>
                     <p className="text-dark">Segera hubungi kami untuk informasi selengkapnya mengenai jasa ahli kunci mobil, anda bisa datang ke workshop kami atau kami langsung meluncur ke lokasi anda!</p>
                     <a href={`https://api.whatsapp.com/send?phone=${kontak.whatsapp}`}><button className="btn btn-whatsapp mb-3"><i className='fab fa-whatsapp'></i> Klik disini untuk Whatsapp kami</button></a><br/>
                     <a href={`tel:${kontak.telphone}`}><button className="btn btn-telfon"><i className='fas fa-phone'></i> {kontak.telphone}</button></a>

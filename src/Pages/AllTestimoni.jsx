@@ -78,7 +78,7 @@ const AllTestimoniPages = (props) => {
         </Helmet>
         <div className="content-page-after-header">
             <div className="container mt-5">
-                <h1 className="mt-3 text-center">Semua testimoni</h1>
+                <h1 className="mt-3 text-center">Semua testimoni ahli kunci mobil Zkeys.id</h1>
                 <p className="mb-5 text-center">Berikut dibawah ini merupakan testimoni dari pelanggan - pelanggan kami</p>
                 <div className="row">
                     {mapTesti()}

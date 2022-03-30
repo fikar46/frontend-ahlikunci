@@ -38,7 +38,7 @@ const TestimoniPage = (props) => {
   return (
   <div className="bg-layanan">
        <div className="container mt-5 p-3">
-            <h1 className="text-center text-white py-5">Testimoni pelanggan kami</h1>
+            <h2 className="text-center text-white py-5">Testimoni pelanggan kami</h2>
             <div className="row">
                 {mapTesti()}
             </div>

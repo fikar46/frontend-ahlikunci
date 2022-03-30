@@ -29,6 +29,7 @@ import { koneksi } from './environtment';
 import ProfilePages from './Pages/ProfileAdmin';
 import ForgetPages from './component/ForgetPage';
 import ChangePasswordPages from './component/ChangePasswordPage';
+import NotFoundPages from './Pages/404Pages';
 function App() {
   const [kontak,setKontak] = useState({})
   useEffect(()=>{
@@ -66,6 +67,7 @@ function App() {
       <Route path="/all-testimoni" element={<AllTestimoniPages kontak={kontak}/>}/>
       <Route path="/forget-password-admin" element={<ForgetPages kontak={kontak}/>}/>
       <Route path="/change-password-forget" element={<ChangePasswordPages kontak={kontak}/>}/>
+      <Route path="*" element={<NotFoundPages kontak={kontak}/>}/>
     </Routes>
   </BrowserRouter>
    

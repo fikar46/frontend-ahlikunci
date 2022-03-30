@@ -75,7 +75,7 @@ const ServicePage = (props) => {
   }
   return (
        <div className="container my-5 p-3">
-            <h1 className="text-center py-5">Berikut beberapa layanan yang sudah kami tangani</h1>
+            <h2 className="text-center py-5">Berikut beberapa layanan yang sudah kami tangani</h2>
             <Slider {...settings}>
           
             {mapData()}

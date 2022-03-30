@@ -270,3 +270,11 @@ img.card-img-top.img-card-size {
   object-fit: cover; /* cover, contain, fill, scale-down */
   object-position: center;
 }
+.mt-9 {
+  margin-top: 10%;
+}
+h1.notfoundtext {
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
