@@ -2,7 +2,7 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.html [QSA,L]
-RewriteCond %{HTTP_HOST} ^www.site\.com$ [NC]
+RewriteCond %{HTTP_HOST} ^www.zkeys\.id$ [NC]
 RewriteRule ^(.*)$ Http://zkeys.id/$1 [R=301,L]
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
