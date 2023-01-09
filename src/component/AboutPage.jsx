@@ -5,7 +5,7 @@ const AboutPage = (props) => {
   return (
    <div className="container mt-5">
         <div className="text-center mb-5">
-            <h1>Ahli kunci mobil Zkeys</h1>
+            <h1>Ahli duplikat dan buka kunci mobil Immobilizer Zkeys</h1>
         </div>
         <div className="row">
             <div className="col-12 col-md-4 col-sm-12 col-xs-12 text-center mb-3">
@@ -14,8 +14,8 @@ const AboutPage = (props) => {
             </div>
             <div className="col-12 col-md-8 col-sm-12 col-xs-12">
                <div className="content-about w-about-text">
-               <h2 className="">Sekilas <span className="text-utama">tentang</span> kami</h2>
-                <p className="">Zkeys melayani service kunci mobil yang mengalami kerusakan akibat patah, hilang / lost key, tidak terdeteksi sistem kunci keyless, dan juga pembuatan kunci baru. Melayani semua merk dan type mobil. Silahkan konsultasikan masalah kunci mobil Anda kepada kami. Dengan senang hati kami akan membantu menemukan solusi kunci mobil Anda.
+               <h2 className="">Ahli buka dan duplikat kunci Immobilizer<span className="text-utama"> terdekat</span></h2>
+                <p className="">Kami ahli kunci mobil profesional terpecaya, terima duplikat kunci mobil immobilizer, kunci hilang, kunci patah, buka pintu mobil kunci tertinggal didalam mobil. melayani jabodetabek sekitarnya.
                     <br/> <br/>
                     Kami menjangkau seluruh Wilayah Jabodetabek kususnya Tangerang, Tangerang Selatan, Banten, DKI Jakarta, Bekasi, Depok, Cinere, Bogor dan Sekitarnya.
                     <br/> <br/>

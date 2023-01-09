@@ -10,9 +10,9 @@ import {Helmet} from "react-helmet";
 
 const queryString = require('query-string');
 function TestimoniPageDetail(props){
-  let { id,judul } = useParams();
+  let { id } = useParams();
   const [blogPage,setBlogPage] = useState({})
-  var user = JSON.parse(localStorage.getItem("data"))
+  // var user = JSON.parse(localStorage.getItem("data"))
   useEffect(()=>{
     getBlogById()
   },[])
