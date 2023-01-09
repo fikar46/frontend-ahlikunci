@@ -7,7 +7,7 @@ const FooterPage = (props) => {
        <div className="container p-5">  
             <div className="row">
                 <div className="col-12 col-md-3">
-                   <img src="https://zkeys.id/logo.png" width='150px' alt="logo_zkeys"/>
+                   <img src="./logo.webp" width='150px' alt="logo_zkeys"/>
                    <div className="col-md-12 mt-3">
                     <a href={kontak.facebook} target="_blank" className="text-utama" style={{textDecoration:'none'}}><span className="pr-5 icon-sosmed"><i className='fab fa-facebook'></i></span></a>
                     <a href={kontak.instagram} target="_blank" className="text-utama" style={{textDecoration:'none'}}><span className="pr-5 icon-sosmed"><i className='fab fa-instagram'></i></span></a>

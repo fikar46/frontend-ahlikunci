@@ -3,26 +3,45 @@ import { Input } from 'reactstrap';
 import Axios  from 'axios';
 import Swal from 'sweetalert2';
 import { koneksi } from '../../../environtment';
-
+import Resizer from "react-image-file-resizer";
 const LayananCreateComponentAdmin = (props) => {
     const [thumbnailName, setThumbnailName] = useState("Upload Foto Layanan")
+    const [thumbnailSrc, setThumbnailSrc] = useState("")
     const onAddFileImageChange = () => {
         if(document.getElementById("thumbnail").files[0] !== undefined) {
             setThumbnailName(document.getElementById("thumbnail").files[0].name)
+            setThumbnailSrc(window.URL.createObjectURL(document.getElementById("thumbnail").files[0]))
         }
         else {
             setThumbnailName("Upload thumbnail blog")
         }
     }
-    const uploadLayanan=()=>{
+    const resizeFile = (file,imageData) =>
+    new Promise((resolve) => {
+        Resizer.imageFileResizer(
+        file.files[0],
+        imageData.clientWidth,
+        imageData.clientHeight,
+        "WEBP",
+        100,
+        0,
+        (file) => {
+            resolve(file);
+        },
+        "file"
+        );
+    });
+    const uploadLayanan=async()=>{
         var nama = document.getElementById("nama").value;
         var formData = new FormData()
         var file = document.getElementById('thumbnail');
+        var imageData = document.getElementById("thumbnail-image");
+        const img = await resizeFile(file,imageData);
        if(nama != ""){
-        if(file.files[0] != undefined){
-            var blob = file.files[0].slice(0, file.files[0].size, 'image/png');
-            var imageName = 'thumbnail_blog'+'_'+Date.now()+'.png'
-            var newFile = new File([blob], `${imageName}`, {type: 'image/png'});
+        if(img != undefined){
+            var blob = img.slice(0, img.size, 'image/webp');
+            var imageName = 'thumbnail_blog'+'_'+Date.now()+'.webp'
+            var newFile = new File([blob], `${imageName}`, {type: 'image/webp'});
             formData.append('files', newFile,newFile.name)
             var namaThumbnail = newFile.name
             Axios.post(`https://storage.siapptn.com/uploadblog`,formData)
@@ -54,7 +73,8 @@ const LayananCreateComponentAdmin = (props) => {
             <input type="text" className="form-control" id="nama" aria-describedby="nama" placeholder="Masukan nama layanan" />
         </div>
         <div className="mb-3 col-8">
-            <label htmlFor="judul" className="form-label">Thumbnail</label>
+            <label htmlFor="judul" className="form-label">Thumbnail</label><br/>
+            {thumbnailSrc !=""?<img src={thumbnailSrc} width="150px" alt="thumbnail" id="thumbnail-image"/>:""}
             <Input type="file" id="thumbnail" name="customFile" label={thumbnailName} onChange={onAddFileImageChange} />
             <small>Thumbnail akan muncul pada halaman beranda dan merupakan gambar yang muncul pertama pada testimoni</small>
         </div>

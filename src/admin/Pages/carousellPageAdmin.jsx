@@ -19,9 +19,9 @@ const CarousellPageAdmin = (props) => {
         var formData = new FormData()
         var file = document.getElementById(e);
         if(file.files[0] != undefined){
-            var blob = file.files[0].slice(0, file.files[0].size, 'image/png');
-            var imageName = 'carousell'+'_'+Date.now()+'.png'
-            var newFile = new File([blob], `${imageName}`, {type: 'image/png'});
+            var blob = file.files[0].slice(0, file.files[0].size, 'image/webp');
+            var imageName = 'carousell'+'_'+Date.now()+'.webp'
+            var newFile = new File([blob], `${imageName}`, {type: 'image/webp'});
             formData.append('files', newFile,newFile.name)
             var namaThumbnail = newFile.name
             axios.post(`https://storage.siapptn.com/uploadblog`,formData)

@@ -10,6 +10,8 @@ import { insertImagePlugin } from './insertImagePlugin';
 import { insertImageFiles } from './utils';
 import { InsertImage } from './insertImageTool';
 import { koneksi } from '../../../environtment';
+import Resizer from "react-image-file-resizer";
+
 
 const cookies = new Cookies();
 const {
@@ -49,6 +51,7 @@ const {
 function CreateTestimoniAdmin(){
     const [thumbnailName, setThumbnailName] = useState("Upload thumbnail Testimoni")
     const editor = React.createRef();
+    const [thumbnailSrc, setThumbnailSrc] = useState("")
     const textarea = React.createRef();
     const judul = React.useRef("");
     const [titleLength,setTitleLength] = useState(0);
@@ -60,7 +63,22 @@ function CreateTestimoniAdmin(){
    const konten =(e)=>{
     setValue(e.value);
    }
-   const postKonten = () => {
+   const resizeFile = (file,imageData) =>
+   new Promise((resolve) => {
+       Resizer.imageFileResizer(
+       file.files[0],
+       imageData.clientWidth,
+       imageData.clientHeight,
+       "WEBP",
+       100,
+       0,
+       (file) => {
+           resolve(file);
+       },
+       "file"
+       );
+   });
+   const postKonten =async() => {
         const view = editor.current.view;
         var judulBlog = judul.current.value;
         var captionBlog = caption.current.value;
@@ -83,10 +101,12 @@ function CreateTestimoniAdmin(){
                 if(!isEmpty){
                     var formData = new FormData()
                     var file = document.getElementById('thumbnail');
-                   if(file.files[0] != undefined){
-                    var blob = file.files[0].slice(0, file.files[0].size, 'image/png');
-                    var imageName = 'thumbnail_blog'+'_'+Date.now()+'.png'
-                    var newFile = new File([blob], `${imageName}`, {type: 'image/png'});
+                    var imageData = document.getElementById("thumbnail-image");
+                    const img = await resizeFile(file,imageData);
+                   if(img != undefined){
+                    var blob = img.slice(0, img.size, 'image/webp');
+                    var imageName = 'thumbnail_blog'+'_'+Date.now()+'.webp'
+                    var newFile = new File([blob], `${imageName}`, {type: 'image/webp'});
                     formData.append('files', newFile,newFile.name)
                     var namaThumbnail = newFile.name
                     Axios.post(`https://storage.siapptn.com/uploadblog`,formData)
@@ -128,6 +148,7 @@ function CreateTestimoniAdmin(){
   const onAddFileImageChange = () => {
     if(document.getElementById("thumbnail").files[0] !== undefined) {
         setThumbnailName(document.getElementById("thumbnail").files[0].name)
+        setThumbnailSrc(window.URL.createObjectURL(document.getElementById("thumbnail").files[0]))
     }
     else {
         setThumbnailName("Upload thumbnail blog")
@@ -189,7 +210,10 @@ if(user != undefined){
                 <div className="d-flex justify-content-end">  <div >{descLength>0 ? <p>{descLength<=200?<span>{descLength}</span>:<span className="text-danger">{descLength}</span>}</p>:<p className="text-right"></p>}</div></div>
            </div>
             <div className="mb-3 col-8">
-                <label htmlFor="judul" className="form-label">Thumbnail</label>
+                <label htmlFor="judul" className="form-label">Thumbnail</label><br/>
+                {
+                    thumbnailSrc !=''?<img src={thumbnailSrc} width="250px" alt="thumbnail" id="thumbnail-image"/>:''
+                }
                 <Input type="file" id="thumbnail" name="customFile" label={thumbnailName} onChange={onAddFileImageChange} />
                 <small>Thumbnail akan muncul pada halaman beranda dan merupakan gambar yang muncul pertama pada testimoni</small>
             </div>
