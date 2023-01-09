@@ -15,7 +15,7 @@ const AboutPage = (props) => {
             <div className="col-12 col-md-8 col-sm-12 col-xs-12">
                <div className="content-about w-about-text">
                <h2 className="">Ahli buka dan duplikat kunci Immobilizer<span className="text-utama"> terdekat</span></h2>
-                <p className="">Kami ahli kunci mobil profesional terpecaya, terima duplikat kunci mobil immobilizer, kunci hilang, kunci patah, buka pintu mobil kunci tertinggal didalam mobil. melayani jabodetabek sekitarnya.
+                <p className="">Kami ahli kunci mobil immobilizer terdekat, terima duplikat kunci mobil immobilizer, kunci hilang, kunci patah, buka pintu mobil kunci tertinggal didalam mobil, duplikat dan buka kunci motor dan buka brankas. melayani jabodetabek sekitarnya
                     <br/> <br/>
                     Kami menjangkau seluruh Wilayah Jabodetabek kususnya Tangerang, Tangerang Selatan, Banten, DKI Jakarta, Bekasi, Depok, Cinere, Bogor dan Sekitarnya.
                     <br/> <br/>
