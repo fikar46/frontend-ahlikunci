@@ -9,7 +9,7 @@ const ContactPage = (props) => {
             <div className="col-12 col-md-4 col-sm-12 col-xs-12 text-center mb-3">
                 <div className="u-align-left u-black u-expanded-height u-shape u-shape-1"></div>
                 <div className="bg-image-contact">
-                    <img src="./asset/logo-black.jpeg" className="image-fluid contact-img" alt="logo" width={'350px'} height={'auto'} />
+                    <img src="./asset/logo-black.webp" className="image-fluid contact-img" alt="logo" width={'350px'} height={'auto'} />
                 </div>
             </div>
             <div className="col-12 col-md-8 col-sm-12 col-xs-12">
