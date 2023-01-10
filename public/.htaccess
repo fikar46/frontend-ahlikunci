@@ -6,4 +6,5 @@ RewriteCond %{HTTP_HOST} ^www.zkeys\.id$ [NC]
 RewriteRule ^(.*)$ https://zkeys.id/$1 [R=301,L]
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
+    Redirect 301 /index.html https://zkeys.id/
 </IfModule>
