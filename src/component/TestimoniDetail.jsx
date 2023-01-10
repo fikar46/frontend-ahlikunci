@@ -21,6 +21,8 @@ function TestimoniPageDetail(props){
       id,unique:id
     }).then(res=>{
       setBlogPage(res.data[0])
+      document.getElementsByTagName('meta')["description"].content = res.data[0].caption;
+      document.title = res.data[0].judul;
     })
   }
   const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni",
@@ -37,8 +39,7 @@ if(blogPage.youtube != null){
     return(
        <div className="container mt-5">
         <Helmet>
-              <title>{blogPage.judul}</title>
-              <meta name="description" content={blogPage.caption} />
+            
               <meta name="robots" content="index, follow" />
               <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
               <meta property="type" content="article" />

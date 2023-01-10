@@ -31,7 +31,7 @@ const AllTestimoniPages = (props) => {
                 <div className="col-12 col-md-4 mb-4">
                     <div className="card p-3">
                         <div className="image-card-testimoni">
-                            <img src={`https://storage.siapptn.com/image/blog/${item.thumbnail}`} className="card-img-top img-card-size" alt=""></img>
+                            <img src={`https://storage.siapptn.com/image/blog/${item.thumbnail}`} className="card-img-top img-card-size" alt={item.judul}></img>
                         </div>
                         <h4>{item.judul}</h4>
                         <p className="caption-text">{item.caption}</p>

@@ -46,13 +46,13 @@ const handleScroll = () => {
   const getMeta=()=>{
     axios.post(`${koneksi}/kunci/getmeta`).then((res)=>{
       setMeta(res.data[0])
+      document.getElementsByTagName('meta')["description"].content = res.data[0].description;
+      document.title = res.data[0].title;
     })
   }
   return (
     <div>
         <Helmet>
-              <title>{meta.title}</title>
-              <meta name="description" content={meta.description} />
               <meta name="robots" content="index, follow" />
               <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
               <meta property="type" content="article" />

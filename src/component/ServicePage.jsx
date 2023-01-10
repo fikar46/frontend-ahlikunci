@@ -63,7 +63,7 @@ const ServicePage = (props) => {
         
           <div className="card p-3 pointer" >
                         <div className="image-card-service">
-                            <img src={`https://storage.siapptn.com/image/blog/${item.foto}`} className="card-img-top img-card-size" alt=""></img>
+                            <img src={`https://storage.siapptn.com/image/blog/${item.foto}`} className="card-img-top img-card-size" alt={item.nama}></img>
                         </div>
                         <p>{item.nama}</p>  
                         <button className="btn btn-utama" onClick={redirectFunc}>Buka</button>
