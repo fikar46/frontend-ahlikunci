@@ -10,7 +10,7 @@ const AboutPage = (props) => {
         <div className="row">
             <div className="col-12 col-md-4 col-sm-12 col-xs-12 text-center mb-3">
                 <div className="u-align-left u-black u-expanded-height u-shape u-shape-1"></div>
-                <img src="./asset/4.webp" className="image-fluid about-img" alt="zkeys ahli kunci mobil" />
+                <img src="./asset/about.webp" className="image-fluid about-img" alt="zkeys ahli kunci mobil" />
             </div>
             <div className="col-12 col-md-8 col-sm-12 col-xs-12">
                <div className="content-about w-about-text">
