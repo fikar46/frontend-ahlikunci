@@ -1,11 +1,17 @@
 
 import React, {  } from 'react';
+import { Helmet } from 'react-helmet';
 import HeaderPage from '../component/Header';
 
 const NotFoundPages = (props) => {
 
   return (
     <div>
+       <Helmet>
+              <meta name="robots" content="noindex"></meta>
+              <meta name="googlebot" content="noindex"></meta>
+              <link rel="canonical" href="https://zkeys.id"></link>
+        </Helmet>
         <HeaderPage kontak={props.kontak}/>
         <div className="content-page-after-header">
             <div className="container">

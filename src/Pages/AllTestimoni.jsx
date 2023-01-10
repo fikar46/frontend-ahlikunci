@@ -75,6 +75,7 @@ const AllTestimoniPages = (props) => {
               <meta name="twitter:title" content={'Testimoni Pelanggan'} />
               <meta name="twitter:description" content={'Testimoni dari beberapa pelanggan kami yang telah menggunakan jasa perbaikan kunci ditempat kami, kami juga bisa datang langsung kelokasi pelanggan kami'}/>
               <meta name="twitter:image" content={`https://zkeys.id/logo.png`}/>
+              <link rel="canonical" href="https://zkeys.id/all-testimoni"></link>
         </Helmet>
         <div className="content-page-after-header">
             <div className="container mt-5">

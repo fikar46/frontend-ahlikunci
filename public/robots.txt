@@ -1,6 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
-Disallow:
+Disallow: https://zkeys.id/index.html
 
 Sitemap: https://zkeys.id/sitemap.xml
