@@ -8,8 +8,6 @@ const NotFoundPages = (props) => {
   return (
     <div>
        <Helmet>
-              <meta name="robots" content="noindex"></meta>
-              <meta name="googlebot" content="noindex"></meta>
               <link rel="canonical" href="https://zkeys.id"></link>
         </Helmet>
         <HeaderPage kontak={props.kontak}/>
