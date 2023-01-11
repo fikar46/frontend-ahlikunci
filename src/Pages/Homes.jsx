@@ -46,8 +46,8 @@ const handleScroll = () => {
   const getMeta=()=>{
     axios.post(`${koneksi}/kunci/getmeta`).then((res)=>{
       setMeta(res.data[0])
-      document.getElementsByTagName('meta')["description"].content = res.data[0].description;
-      document.title = res.data[0].title;
+      document.getElementsByTagName('meta')["description"].content = `Ahli duplikat kunci mobil immobilizer ${props.kota} sekitarnya, terima panggilan duplikat kunci mobil immobilizer, kunci hilang, kunci patah dan buka pintu mobil kunci tertinggal didalam mobil untuk jabodetabek sekitarnya`;
+      document.title = `Ahli buka dan duplikat kunci Immobilizer ${props.kota != undefined ? props.kota : "terdekat"}`;
     })
   }
   return (
@@ -57,8 +57,8 @@ const handleScroll = () => {
               <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
               <meta property="type" content="article" />
               <meta property="image" content="https://zkeys.id/favicon.png" />
-              <meta property="title" content={meta.title} />
-              <meta property="description" content={meta.description} />
+              <meta property="title" content={`Ahli buka dan duplikat kunci Immobilizer ${props.kota != undefined ? props.kota : "terdekat"}`} />
+              <meta property="description" content={`Ahli duplikat kunci mobil immobilizer ${props.kota} sekitarnya, terima panggilan duplikat kunci mobil immobilizer, kunci hilang, kunci patah dan buka pintu mobil kunci tertinggal didalam mobil untuk jabodetabek sekitarnya`} />
               <meta property="url" content={window.location.href} />
               <meta property="site_name" content="zkeys.id" />
               <meta name="keywords" content={meta.description} />
@@ -80,7 +80,7 @@ const handleScroll = () => {
               <meta name="twitter:title" content={meta.title} />
               <meta name="twitter:description" content={meta.description}/>
               <meta name="twitter:image" content='https://zkeys.id/favicon.png'/>
-              <link rel="canonical" href="https://zkeys.id"></link>
+              <link rel="canonical" href={`https://zkeys.id/${props.kota != undefined ? props.kota.toLowerCase() : ""}`}></link>
         </Helmet>
         <HeaderPage kontak={kontak}/>
         <div className="content-page-after-header">
@@ -89,7 +89,7 @@ const handleScroll = () => {
         <button className="btn btn-back-top" onClick={topFunction} id="myBtn" title="Go to top"><i class='fas fa-chevron-up'></i></button>
         <CarousellPage kontak={props.kontak}/>
         <FiturLayanan/>
-        <AboutPage/>
+        <AboutPage kota={props.kota}/>
         <PelayananPage kontak={props.kontak}/>
         <ServicePage kontak={props.kontak}/>
         <TestimoniPage/>

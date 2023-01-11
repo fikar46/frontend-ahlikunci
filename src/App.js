@@ -46,6 +46,16 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<HomesPage kontak={kontak}/>}/>
+      <Route path="/tangerang" element={<HomesPage kontak={kontak} kota={'Tangerang'}/>}/>
+      <Route path="/bogor" element={<HomesPage kontak={kontak} kota={'Bogor'}/>}/>
+      <Route path="/bekasi" element={<HomesPage kontak={kontak} kota={'Bekasi'}/>}/>
+      <Route path="/depok" element={<HomesPage kontak={kontak} kota={'Depok'}/>}/>
+      <Route path="/jakarta" element={<HomesPage kontak={kontak} kota={'Jakarta'}/>}/>
+      <Route path="/pandeglang" element={<HomesPage kontak={kontak} kota={'Pandeglang'}/>}/>
+      <Route path="/serang" element={<HomesPage kontak={kontak} kota={'Serang'}/>}/>
+      <Route path="/cikarang" element={<HomesPage kontak={kontak} kota={'Cikarang'}/>}/>
+      <Route path="/rangkas" element={<HomesPage kontak={kontak} kota={'Rangkas'}/>}/>
+      <Route path="/cinere" element={<HomesPage kontak={kontak} kota={'Cinere'}/>}/>
       <Route path="/tentang-kami" element={<TentangPages kontak={kontak}/>}/>
       <Route path="/layanan" element={<LayananPages kontak={kontak}/>}/>
       <Route path="/kontak" element={<KontakPages kontak={kontak}/>}/>

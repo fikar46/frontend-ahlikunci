@@ -6,21 +6,67 @@
 
       <loc>https://zkeys.id/</loc>
 
-      <lastmod>2021-02-17</lastmod>
-
-      <changefreq>never</changefreq>
+      <lastmod>2023-01-11T13:52:38+00:00</lastmod>
 
       <priority>1.0</priority>
 
    </url>
-
+    <url>
+      <loc>https://zkeys.id/tangerang</loc>
+      <lastmod>2023-01-11T13:52:38+00:00</lastmod>
+      <priority>0.9</priority>
+   </url>
+    <url>
+      <loc>https://zkeys.id/bogor</loc>
+      <lastmod>2023-01-11T13:52:38+00:00</lastmod>
+      <priority>0.9</priority>
+   </url>
+    <url>
+      <loc>https://zkeys.id/bekasi</loc>
+      <lastmod>2023-01-11T13:52:38+00:00</lastmod>
+      <priority>0.9</priority>
+   </url>
+    <url>
+      <loc>https://zkeys.id/depok</loc>
+      <lastmod>2023-01-11T13:52:38+00:00</lastmod>
+      <priority>0.9</priority>
+   </url>
+    <url>
+      <loc>https://zkeys.id/jakarta</loc>
+      <lastmod>2023-01-11T13:52:38+00:00</lastmod>
+      <priority>0.9</priority>
+   </url>
+    <url>
+      <loc>https://zkeys.id/pandeglang</loc>
+      <lastmod>2023-01-11T13:52:38+00:00</lastmod>
+      <priority>0.9</priority>
+   </url>
+    <url>
+      <loc>https://zkeys.id/serang</loc>
+      <lastmod>2023-01-11T13:52:38+00:00</lastmod>
+      <priority>0.9</priority>
+   </url>
+    <url>
+      <loc>https://zkeys.id/cikarang</loc>
+     <lastmod>2023-01-11T13:52:38+00:00</lastmod>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://zkeys.id/rangkas</loc>
+      <lastmod>2023-01-11T13:52:38+00:00</lastmod>
+      <priority>0.9</priority>
+   </url>
+    <url>
+      <loc>https://zkeys.id/cinere</loc>
+      <lastmod>2023-01-11T13:52:38+00:00</lastmod>
+      <priority>0.9</priority>
+   </url>
+   
     <url>
 
       <loc>https://zkeys.id/all-testimoni</loc>
 
-      <lastmod>2021-02-17</lastmod>
-
-      <changefreq>never</changefreq>
+      <lastmod>2023-01-11T13:52:38+00:00</lastmod>
 
       <priority>0.7</priority>
 
