@@ -39,11 +39,10 @@ if(blogPage.youtube != null){
     return(
        <div className="container mt-5">
         <Helmet>
-            
               <meta name="robots" content="index, follow" />
               <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
               <meta property="type" content="article" />
-              <meta property="image" content={`https://storage.siapptn.com/image/blog/${blogPage.thumbnail}`} />
+              <meta property="image" content={`https://zkeys.id/favicon.png`} />
               <meta property="title" content={blogPage.judul} />
               <meta property="description" content={blogPage.caption} />
               <meta property="url" content={window.location.href} />
@@ -56,7 +55,7 @@ if(blogPage.youtube != null){
               <meta httpEquiv="content-language" content="In-Id" />
               <meta name="geo.placename" content="Indonesia" />
               <meta property="og:type" content="article" />
-              <meta property="og:image" content={`https://storage.siapptn.com/image/blog/${blogPage.thumbnail}`} />
+              <meta property="og:image" content={`https://zkeys.id/favicon.png`} />
               <meta property="og:title" content={blogPage.judul} />
               <meta property="og:description" content={blogPage.caption} />
               <meta property="og:url" content={window.location.href} />
