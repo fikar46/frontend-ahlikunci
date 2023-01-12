@@ -46,8 +46,14 @@ const handleScroll = () => {
   const getMeta=()=>{
     axios.post(`${koneksi}/kunci/getmeta`).then((res)=>{
       setMeta(res.data[0])
-      document.getElementsByTagName('meta')["description"].content = `Ahli duplikat kunci mobil immobilizer ${props.kota} sekitarnya, terima panggilan duplikat kunci mobil immobilizer, kunci hilang, kunci patah dan buka pintu mobil kunci tertinggal didalam mobil untuk jabodetabek sekitarnya`;
-      document.title = `Ahli buka dan duplikat kunci Immobilizer ${props.kota != undefined ? props.kota : "terdekat"}`;
+      console.log(props)
+      if(props.kota != undefined){
+        document.getElementsByTagName('meta')["description"].content = `Ahli service kunci dan duplikat kunci mobil immobilizer ${props.kota} sekitarnya, terima panggilan duplikat kunci mobil immobilizer, kunci hilang, kunci patah dan buka pintu mobil kunci tertinggal didalam mobil untuk jabodetabek sekitarnya`;
+        document.title = `Ahli service kunci dan duplikat kunci mobil Immobilizer ${props.kota}`;
+      }else{
+        document.getElementsByTagName('meta')["description"].content = res.data[0].description;
+        document.title = res.data[0].title;
+      }
     })
   }
   return (
@@ -57,8 +63,8 @@ const handleScroll = () => {
               <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
               <meta property="type" content="article" />
               <meta property="image" content="https://zkeys.id/favicon.png" />
-              <meta property="title" content={`Ahli buka dan duplikat kunci Immobilizer ${props.kota != undefined ? props.kota : "terdekat"}`} />
-              <meta property="description" content={`Ahli duplikat kunci mobil immobilizer ${props.kota} sekitarnya, terima panggilan duplikat kunci mobil immobilizer, kunci hilang, kunci patah dan buka pintu mobil kunci tertinggal didalam mobil untuk jabodetabek sekitarnya`} />
+              <meta property="title" content={`Ahli service kunci dan duplikat kunci Immobilizer ${props.kota != undefined ? props.kota : "terdekat"}`} />
+              <meta property="description" content={`Ahli service kunci dan duplikat kunci mobil immobilizer ${props.kota}, terima panggilan duplikat kunci mobil immobilizer, kunci hilang, kunci patah dan buka pintu mobil kunci tertinggal didalam mobil untuk jabodetabek sekitarnya`} />
               <meta property="url" content={window.location.href} />
               <meta property="site_name" content="zkeys.id" />
               <meta name="keywords" content={meta.description} />
