@@ -27,10 +27,10 @@ const updateMeta=()=>{
     var title = document.getElementById('title').value;
     var description = document.getElementById('description').value;
     console.log(title.length,description.length)
-    if(title.length > 60){
+    if(title.length > 90){
         alert("Title harus dibawah 60 karakter")
     }else{
-        if(description.length > 200){
+        if(description.length > 250){
             alert("Deskripsi harus dibawah 200 karakter")
         }else{
             var testiObj={
@@ -63,12 +63,12 @@ const updateMeta=()=>{
                 <div className="mb-3 col-8">
                     <label htmlFor="title" className="form-label">Title</label>
                     <input type="text" className="form-control" id="title" aria-describedby="title" placeholder="Masukan title untuk halaman depan" defaultValue={meta.title} onChange={textCounter}/>
-                   <div className="d-flex justify-content-end"> {meta.title != undefined? <div >{titleLength>0 ? <p>{titleLength<=60?<span>{titleLength}</span>:<span className="text-danger">{titleLength}</span>}</p>:<p className="text-right">{meta.title.length}</p>}</div>:<div></div>}</div>
+                   <div className="d-flex justify-content-end"> {meta.title != undefined? <div >{titleLength>0 ? <p>{titleLength<=90?<span>{titleLength}</span>:<span className="text-danger">{titleLength}</span>}</p>:<p className="text-right">{meta.title.length}</p>}</div>:<div></div>}</div>
                 </div>
                 <div className="mb-3 col-8">
                     <label htmlFor="description" className="form-label">Meta Description</label>
                     <textarea type="text" className="form-control" id="description" aria-describedby="description" placeholder="Masukan description untuk halaman depan" defaultValue={meta.description} onChange={textCounter}/>
-                    <div className="d-flex justify-content-end"> {meta.description != undefined? <div >{descLength>0 ? <p>{descLength<=200?<span>{descLength}</span>:<span className="text-danger">{descLength}</span>}</p>:<p className="text-right">{meta.description.length}</p>}</div>:<div></div>}</div>
+                    <div className="d-flex justify-content-end"> {meta.description != undefined? <div >{descLength>0 ? <p>{descLength<=250?<span>{descLength}</span>:<span className="text-danger">{descLength}</span>}</p>:<p className="text-right">{meta.description.length}</p>}</div>:<div></div>}</div>
                 </div>
                 <button className="btn btn-success" onClick={updateMeta}>Submit meta</button>
             </div>
