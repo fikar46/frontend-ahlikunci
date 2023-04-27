@@ -4,3 +4,4 @@ Allow: /
 Disallow: 
 
 Sitemap: https://zkeys.id/sitemap.xml
+Sitemap: https://zkeys.id/sitemap.rss
